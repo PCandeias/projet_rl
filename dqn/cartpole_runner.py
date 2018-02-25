@@ -6,6 +6,7 @@ import gym
 
 class CartPoleRunner(GymRunner):
     def create_environment(self):
+        self.labels = ['Left', 'Right']
         self.env = gym.make('CartPole-v1')
 
     def create_agent(self):
@@ -16,5 +17,5 @@ class CartPoleRunner(GymRunner):
 
 
 runner = CartPoleRunner()
-runner.run(n_episodes=2000, train=True, render=False, goal_score=350)
+runner.run(n_episodes=1000, train=True, render=False, goal_score=350)
 runner.run(n_episodes=10, train=False, render=True)

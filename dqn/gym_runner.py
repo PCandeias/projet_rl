@@ -5,6 +5,7 @@ from live_graph import LiveGraph
 
 class GymRunner(object):
     def __init__(self):
+        self.labels = None
         self.create_environment()
         self.create_agent()
 
@@ -22,7 +23,7 @@ class GymRunner(object):
 
     def run(self, n_episodes, train=False, render=False, goal_score=None):
         if render:
-            value_graph = LiveGraph()
+            value_graph = LiveGraph(lines=2, labels=self.labels)
             value_graph.show()
         recent_scores = deque(maxlen=100)
         all_scores = np.zeros(n_episodes)
@@ -33,12 +34,13 @@ class GymRunner(object):
             done = False
             state = self.preprocess_state(self.env.reset())
             while not done:
-                if render:
-                    self.env.render()
-                    values = self.agent.get_values(state)
-                    value_graph.add_value(np.max(values))
 
                 action = self.agent.select_action(state, self.agent.eps)
+                if render:
+                    print("Action: %d" % (action,))
+                    self.env.render()
+                    values = self.agent.get_values(state)[0]
+                    value_graph.add_value(values)
                 next_state, reward, done, info = self.env.step(action)
                 next_state = self.preprocess_state(next_state)
                 score += reward
