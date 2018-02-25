@@ -1,0 +1,8 @@
+dqn\.idea\*
+dqn\venv\*
+*\__pycache__\*
+*\.idea\*
+*.pyc
+*.tcl
+*.msg
+*.gif
