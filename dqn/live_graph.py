@@ -25,9 +25,8 @@ class LiveGraph(object):
         plot_handles = []
         for i in range(self.lines):
             self.values[i].append(new_values[i])
-            h, = self.ax.plot(self.values[i])
-            plot_handles.append(h)
+            self.ax.plot(self.values[i])
         if self.labels:
-            self.ax.legend(plot_handles, self.labels)
+            self.ax.legend(self.labels)
 
         self.figure.canvas.draw()
