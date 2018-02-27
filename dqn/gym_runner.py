@@ -2,6 +2,7 @@ import gym
 from collections import deque
 import numpy as np
 from live_graph import LiveGraph
+from dqn_solver import DqnSolver
 
 class GymRunner(object):
     def __init__(self):
@@ -18,10 +19,17 @@ class GymRunner(object):
     def create_environment(self):
         raise NotImplementedError
 
-    def create_agent(self):
+    def create_agent(self, gamma=1.0, eps=1.0, eps_decay=0.99, eps_min=0.05, alpha=0.01, alpha_decay=0.01):
+        self.agent = DqnSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
+                gamma=gamma, eps=eps, eps_decay=eps_decay, eps_min=eps_min, alpha=alpha, alpha_decay=alpha_decay)
+        
+    def get_action_size(self):
         raise NotImplementedError
 
-    def run(self, n_episodes, train=False, render=False, goal_score=None):
+    def get_observation_size(self):
+        raise NotImplementedError
+
+    def run(self, n_episodes, train=False, render=False, goal_score=None, verbose=False):
         if render:
             value_graph = LiveGraph(lines=2, labels=self.labels)
             value_graph.show()
@@ -47,7 +55,7 @@ class GymRunner(object):
                 self.agent.store(state, action, reward, next_state, done)
                 state = next_state
             # Report the current average score after 100 episodes
-            if e % 100 == 0 and e > 0:
+            if verbose and e % 100 == 0 and e > 0:
                 avg = np.mean(np.array(recent_scores))
                 print("Episode: %d Eps: %f Score: %d" % (e, self.agent.eps, avg))
                 avg_epochs.append(avg)
@@ -58,3 +66,4 @@ class GymRunner(object):
                 self.agent.replay()
             recent_scores.append(score)
             all_scores[e] = score
+        return np.mean(np.array(recent_scores))
