@@ -37,7 +37,6 @@ class GymRunner(object):
 
                 action = self.agent.select_action(state, self.agent.eps)
                 if render:
-                    print("Action: %d" % (action,))
                     self.env.render()
                     values = self.agent.get_values(state)[0]
                     value_graph.add_value(values)
