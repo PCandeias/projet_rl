@@ -20,13 +20,14 @@ class RandomFishermanEnv(gym.Env):
 
     def set_environment_variables(self, max_stock, initial_stock, population, n_agents, growth_rate, max_steps):
         if(n_agents > population):
-            raise 
+            raise ValueError("N. Agents > Population")
         self.max_stock = max_stock
         self.initial_stock = initial_stock
         self.cur_stock = self.initial_stock
         self.population = population
         self.n_agents = n_agents
         self.growth_rate = growth_rate 
+        self.base_pr_fish = 1.0 / self.growth_rate
         self.max_steps = max_steps 
 
     def step(self, actions):
@@ -35,7 +36,7 @@ class RandomFishermanEnv(gym.Env):
         self.cur_step += 1
         actions_population = np.random.rand(self.population)
         agents_spots = random.sample(range(self.population), self.n_agents)
-        rewards = np.zeros(self.n_agents)
+        rewards = np.zeros(self.n_agents, dtype=np.float64)
         pr_fish = max(0, (self.cur_stock - 
             min(self.max_stock * self.base_pr_fish, self.population / float(self.growth_rate -1))) / self.population)
         starting_stock = self.cur_stock
@@ -62,7 +63,7 @@ class RandomFishermanEnv(gym.Env):
         self.cur_stock = self.initial_stock
         self.cur_step = 0
         self.done = False
-        return np.array(self.cur_stock)
+        return np.array(self.cur_stock, dtype=np.float64)
 
     def render(self):
         print("Current stock: %d" % (self.cur_stock))

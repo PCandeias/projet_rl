@@ -16,16 +16,19 @@ __init__	dqn/gym_runner.py	/^    def __init__(self):$/;"	m	class:GymRunner
 __init__	dqn/live_graph.py	/^    def __init__(self, maxlen=100, lines=1, labels=None):$/;"	m	class:LiveGraph
 __init__	dqn/multi_gym_runner.py	/^    def __init__(self, n_agents=1):$/;"	m	class:MultiGymRunner
 __init__	fisherman_dilemma/fisherman_random.py	/^    def __init__(self):$/;"	m	class:RandomFishermanEnv
-_create_agents	dqn/multi_gym_runner.py	/^    def _create_agents(self, gamma=0.97, eps=1.0, eps_decay=0.995, eps_min=0.1, alpha=0.01,$/;"	m	class:MultiGymRunner
+_create_agents	dqn/multi_gym_runner.py	/^    def _create_agents(self, gamma=1.0, eps=1.0, eps_decay=0.995, eps_min=0.1, alpha=0.01,$/;"	m	class:MultiGymRunner
 _create_environment	dqn/multi_cartpole_runner.py	/^    def _create_environment(self):$/;"	m	class:MultiCartpoleRunner
 _create_environment	dqn/multi_gym_runner.py	/^    def _create_environment(self):$/;"	m	class:MultiGymRunner
 _preprocess_reward	dqn/multi_gym_runner.py	/^    def _preprocess_reward(self, reward):$/;"	m	class:MultiGymRunner
+_preprocess_state	dqn/multi_cartpole_runner.py	/^    def _preprocess_state(self, state):$/;"	m	class:MultiCartpoleRunner
 _preprocess_state	dqn/multi_gym_runner.py	/^    def _preprocess_state(self, state):$/;"	m	class:MultiGymRunner
-_reset_metrics	dqn/multi_gym_runner.py	/^    def _reset_metrics(self):$/;"	m	class:MultiGymRunner
+_reset_metrics	dqn/multi_cartpole_runner.py	/^    def _reset_metrics(self, r_episodes=False):$/;"	m	class:MultiCartpoleRunner
+_reset_metrics	dqn/multi_gym_runner.py	/^    def _reset_metrics(self, r_episodes=False):$/;"	m	class:MultiGymRunner
 _select_actions	dqn/multi_gym_runner.py	/^    def _select_actions(self, state):$/;"	m	class:MultiGymRunner
-_store_transitions	dqn/multi_gym_runner.py	/^    def _store_transitions(state, actions, rewards, next_state, done):$/;"	m	class:MultiGymRunner
+_store_transitions	dqn/multi_gym_runner.py	/^    def _store_transitions(self, state, actions, rewards, next_state, done):$/;"	m	class:MultiGymRunner
 _train_agents	dqn/multi_gym_runner.py	/^    def _train_agents(self):$/;"	m	class:MultiGymRunner
-_update_metrics	dqn/multi_gym_runner.py	/^    def _update_metrics(self, state, actions, rewards, next_state, done):$/;"	m	class:MultiGymRunner
+_update_metrics	dqn/multi_cartpole_runner.py	/^    def _update_metrics(self, state, actions, rewards, next_state, done, score):$/;"	m	class:MultiCartpoleRunner
+_update_metrics	dqn/multi_gym_runner.py	/^    def _update_metrics(self, state, actions, rewards, next_state, done, score):$/;"	m	class:MultiGymRunner
 add_value	dqn/live_graph.py	/^    def add_value(self, new_values):$/;"	m	class:LiveGraph
 build_model	dqn/dqn_solver.py	/^    def build_model(self):$/;"	m	class:DqnSolver
 close	fisherman_dilemma/fisherman_random.py	/^    def close(self):$/;"	m	class:RandomFishermanEnv
@@ -37,6 +40,7 @@ get_action_size	dqn/cartpole_runner.py	/^    def get_action_size(self):$/;"	m	cl
 get_action_size	dqn/gym_runner.py	/^    def get_action_size(self):$/;"	m	class:GymRunner
 get_action_size	dqn/multi_cartpole_runner.py	/^    def get_action_size(self):$/;"	m	class:MultiCartpoleRunner
 get_action_size	dqn/multi_gym_runner.py	/^    def get_action_size(self):$/;"	m	class:MultiGymRunner
+get_metrics	dqn/multi_cartpole_runner.py	/^    def get_metrics(self):$/;"	m	class:MultiCartpoleRunner
 get_metrics	dqn/multi_gym_runner.py	/^    def get_metrics(self):$/;"	m	class:MultiGymRunner
 get_observation_size	dqn/cartpole_runner.py	/^    def get_observation_size(self):$/;"	m	class:CartPoleRunner
 get_observation_size	dqn/gym_runner.py	/^    def get_observation_size(self):$/;"	m	class:GymRunner
@@ -53,7 +57,7 @@ reset	fisherman_dilemma/fisherman_random.py	/^    def reset(self):$/;"	m	class:R
 run	dqn/gym_runner.py	/^    def run(self, n_episodes, train=False, render=False, goal_score=None, verbose=False):$/;"	m	class:GymRunner
 run	dqn/multi_gym_runner.py	/^    def run(self, n_episodes, train=False, render=False):$/;"	m	class:MultiGymRunner
 runner	dqn/cartpole_runner.py	/^runner = CartPoleRunner()$/;"	v
-runner	dqn/multi_cartpole_runner.py	/^runner = MultiCartpoleRunner(10000)$/;"	v
+runner	dqn/multi_cartpole_runner.py	/^runner = MultiCartpoleRunner(100)$/;"	v
 select_action	dqn/dqn_solver.py	/^    def select_action(self, state, eps):$/;"	m	class:DqnSolver
 set_environment_variables	fisherman_dilemma/fisherman_random.py	/^    def set_environment_variables(self, max_stock, initial_stock, population, n_agents, growth_rate, max_steps):$/;"	m	class:RandomFishermanEnv
 show	dqn/live_graph.py	/^    def show(self):$/;"	m	class:LiveGraph

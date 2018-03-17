@@ -1,3 +1,4 @@
+import numpy as np
 import gym
 from collections import deque
 from dqn_solver import DqnSolver
@@ -13,7 +14,7 @@ class MultiGymRunner(object):
     def _create_environment(self):
         raise NotImplementedError
 
-    def _create_agents(self, gamma=0.97, eps=1.0, eps_decay=0.995, eps_min=0.1, alpha=0.01,
+    def _create_agents(self, gamma=1.0, eps=1.0, eps_decay=0.995, eps_min=0.1, alpha=0.01,
                  alpha_decay=0.01, memory_size=10000, batch_size=64, verbose=False):
         self.agents = []
         print("Creating agents...")
@@ -36,22 +37,20 @@ class MultiGymRunner(object):
     def get_observation_size(self):
         raise NotImplementedError
     
-    def _reset_metrics(self):
-        self.all_scores = []
-        self.avg_scores = []
-        self.eps_scores = []
+    def _reset_metrics(self, r_episodes=False):
+        return
 
-    def _update_metrics(self, state, actions, rewards, next_state, done):
+    def _update_metrics(self, state, actions, rewards, next_state, done, score):
         return
 
     def get_metrics(self):
         return
     
     def _train_agents(self):
-        for agent in agents:
+        for agent in self.agents:
             agent.replay()
 
-    def _store_transitions(state, actions, rewards, next_state, done):
+    def _store_transitions(self, state, actions, rewards, next_state, done):
         for i, agent in enumerate(self.agents):
             agent.store(state, actions[i], rewards[i], next_state, done)
 
@@ -63,9 +62,10 @@ class MultiGymRunner(object):
 
 
     def run(self, n_episodes, train=False, render=False):
-        self._reset_metrics()
+        self._reset_metrics(r_episodes = True)
         for e in range(n_episodes):
             step = 0
+            score = np.zeros(self.n_agents, dtype=np.float64)
             done = False
             state = self._preprocess_state(self.env.reset())
             while not done:
@@ -73,11 +73,13 @@ class MultiGymRunner(object):
                     self.env.render()
                 actions = self._select_actions(state)
                 next_state, rewards, done, info = self.env.step(actions)
-                self._update_metrics(state, actions, rewards, next_state, done)
+                next_state = self._preprocess_state(next_state)
+                step += 1
+                score += rewards
+                self._update_metrics(state, actions, rewards, next_state, done, score)
                 if train:
                     self._store_transitions(state, actions, rewards, next_state, done)
                 state = next_state
-                step += 1
             if train:
                 self._train_agents()
         return self.get_metrics()
