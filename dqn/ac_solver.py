@@ -39,6 +39,9 @@ class AcSolver(object):
     def get_values(self, state):
         return self.model_critic.predict(state)
 
+    def get_probabilities(self):
+        return self.model_actor.predict(state)
+
     def select_action(self, state):
         prob = self.model_actor.predict(state)
         return np.random.choice(self.action_size, p=prob[0])

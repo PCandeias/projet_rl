@@ -1,0 +1,4 @@
+For n_agents=100
+Avg_time_step = 0.5ms
+Initial_train = 200s
+Avg_train = 260ms

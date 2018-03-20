@@ -56,7 +56,6 @@ class RandomFishermanEnv(gym.Env):
         self.cur_stock = min(self.max_stock, self.cur_stock * self.growth_rate)
         if self.cur_step >= self.max_steps:
             self.done = True
-        print("Step: %d Before: %d After: %d Consumed: %d" % (self.cur_step, starting_stock, self.cur_stock, consumed))
         return np.array(self.cur_stock), rewards, self.done, {consumed}
 
     def reset(self):

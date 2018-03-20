@@ -1,34 +1,44 @@
 from multi_gym_runner import MultiGymRunner
 import numpy as np
 import gym
+from collections import deque
 
 class MultiCartpoleRunner(MultiGymRunner):
     def _create_environment(self):
-        self.env = gym.make('Fisherman-v0')
-        self.env.set_environment_variables(100, 100, 100, self.n_agents, 2, 200)
+        self.env = gym.make('CartPole-v0')
 
     def get_action_size(self):
         return 2
 
     def get_observation_size(self):
-        return 1
+        return 4
+
+    def _preprocess_reward(self, reward):
+        return [reward]
 
     def _reset_metrics(self, r_episodes=False):
         self.avg_scores = []
         if r_episodes:
-            self.avg_episodes = []
+            self.scores_episodes = []
+            self.scores_recent = deque(maxlen=100)
+
+    def _display_metrics(self, ep_number):
+        print("Episode: %d Average score: %f" % (ep_number, np.mean(self.scores_recent)))
             
-    def _preprocess_state(self, state):
-        return np.reshape(state, [1, self.get_observation_size()])
-
-    def get_metrics(self):
-        return self.avg_episodes, self.avg_scores
-
-    def _update_metrics(self, state, actions, rewards, next_state, done, score):
+    def _update_metrics(self, step, state, actions, rewards, next_state, done, score):
         self.avg_scores.append(np.mean(rewards))
         if done:
-            self.avg_episodes.append(np.mean(self.avg_scores))
+            ep_score = np.sum(self.avg_scores)
+            self.avg_scores = [] # reset episode scores
+            self.scores_episodes.append(ep_score)
+            self.scores_recent.append(ep_score)
 
-runner = MultiCartpoleRunner(100)
-runner.run(n_episodes=1000, train=True)
-runner.run(n_episodes=1, train=False)
+    def get_metrics(self):
+        return self.scores_episodes
+
+    def _process_actions(self, actions):
+        return actions[0] 
+
+runner = MultiCartpoleRunner(1, agent_mode='pg')
+runner.run(n_episodes=1000, train=True, verbose=True)
+runner.run(n_episodes=1, train=False, render=True)

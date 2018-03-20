@@ -36,7 +36,9 @@ class DqnSolver(object):
         return self.model.predict(state)
 
     # select an action according to an eps-greedy policy
-    def select_action(self, state, eps):
+    def select_action(self, state, eps=None):
+        if eps is None:
+            eps = self.eps
         return np.random.randint(0, self.action_size) if eps >= np.random.rand() else np.argmax(self.model.predict(state))
 
     # Train the agent in a given mini_batch of previous (state,action,reward,next_state)
