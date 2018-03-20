@@ -39,7 +39,7 @@ class AcSolver(object):
     def get_values(self, state):
         return self.model_critic.predict(state)
 
-    def get_probabilities(self):
+    def get_probabilities(self, state):
         return self.model_actor.predict(state)
 
     def select_action(self, state):
