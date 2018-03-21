@@ -8,19 +8,22 @@ import time
 
 
 class MultiGymRunner(object):
-    def __init__(self, n_agents=1, agent_mode='dqn'):
+    def __init__(self, n_agents=1, agent_mode='dqn', load_file=None):
         self.n_agents = n_agents
         self.agent_mode = agent_mode
         self._reset_metrics()
         self._create_environment() 
-        self._create_agents()
+        self.agents = []
+        if load_file is not None:
+            self._load_model(load_file)
+        else:
+            self._create_agents()
 
     def _create_environment(self):
         raise NotImplementedError
 
     def _create_agents(self, gamma=0.97, eps=1.0, eps_decay=0.995, eps_min=0.1, alpha=0.01,
                  alpha_decay=0.01, memory_size=10000, batch_size=64, verbose=False):
-        self.agents = []
         print("Creating agents...")
         for i in range(self.n_agents):
             if self.agent_mode == 'pg':
@@ -116,7 +119,7 @@ class MultiGymRunner(object):
                 state = next_state
             milli2 = time.time() * 1000
             total_running += (milli2 - milli1)
-            if verbose and (e+1)%1 == 0:
+            if verbose and (e+1)%10 == 0:
                 self._display_metrics(e)
             milli1 = time.time() * 1000
             if train:
