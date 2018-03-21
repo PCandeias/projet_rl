@@ -66,7 +66,7 @@ class MultiGymRunner(object):
             if self.agent_mode == 'pg':
                 predictions.append(agent.get_probabilities(state))
             elif self.agent_mode == 'ac':
-                predictions.append(agent.get_values(state), self.agent.get_probabilities(state))
+                predictions.append((agent.get_values(state), agent.get_probabilities(state)))
             else:
                 predictions.append(agent.get_values(state))
         return np.array(predictions)
