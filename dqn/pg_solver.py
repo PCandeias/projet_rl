@@ -20,6 +20,7 @@ class PgSolver(object):
         self.batch_size = batch_size
         self.verbose = verbose
         self.build_model()
+        self.EPS = 1e-8
 
     def build_model(self):
         self.model = Sequential()
@@ -54,8 +55,9 @@ class PgSolver(object):
         for state, action, reward in mini_batch:
             x_batch.append(state[0])
             y_batch.append(action)
-            weights.append(reward)
+            weights.append(max(self.EPS, reward) if reward >= 0 else min(-self.EPS, reward))
 
-        self.model.fit(np.array(x_batch), np_utils.to_categorical(np.array(y_batch), self.action_size), sample_weight=np.array(weights), batch_size=batch_size, verbose=self.verbose)
+        self.model.fit(np.array(x_batch), np_utils.to_categorical(np.array(y_batch), self.action_size),
+                sample_weight=np.array(weights), batch_size=batch_size, verbose=self.verbose)
 
 

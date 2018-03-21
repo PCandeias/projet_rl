@@ -58,7 +58,8 @@ class AcSolver(object):
             x_batch.append(state[0])
             y_batch.append(y_train[0])
             actions.append(action)
-            rewards.append(self.model_critic.predict(state)[0][action])
+            reward = self.model_critic.predict(state)[0][action]
+            rewards.append(max(self.EPS, reward) if reward >= 0 else min(-self.EPS, reward))
         self.model_critic.fit(np.array(x_batch), np.array(y_batch), batch_size=batch_size, verbose=self.verbose)
         # for state, action, reward, next_state, done in mini_batch:
         self.model_actor.fit(np.array(x_batch), np_utils.to_categorical(np.array(actions), self.action_size), sample_weight=np.array(rewards), batch_size=batch_size, verbose=self.verbose)

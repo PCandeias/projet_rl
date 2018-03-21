@@ -3,15 +3,15 @@ import numpy as np
 import gym
 from collections import deque
 
-class MultiCartpoleRunner(MultiGymRunner):
+class MultiEnduroRunner(MultiGymRunner):
     def _create_environment(self):
-        self.env = gym.make('CartPole-v1')
+        self.env = gym.make('Enduro-ram-v0')
 
     def get_action_size(self):
-        return 2
+        return 9
 
     def get_observation_size(self):
-        return 4
+        return 128 
 
     def _preprocess_reward(self, reward):
         return [reward]
@@ -39,6 +39,6 @@ class MultiCartpoleRunner(MultiGymRunner):
     def _process_actions(self, actions):
         return actions[0] 
 
-runner = MultiCartpoleRunner(1, agent_mode='pg')
+runner = MultiEnduroRunner(1, agent_mode='pg')
 runner.run(n_episodes=10000, train=True, verbose=True)
 runner.run(n_episodes=100, train=False, render=True)

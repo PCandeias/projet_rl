@@ -116,7 +116,7 @@ class MultiGymRunner(object):
                 state = next_state
             milli2 = time.time() * 1000
             total_running += (milli2 - milli1)
-            if verbose and (e+1)%100 == 0:
+            if verbose and (e+1)%1 == 0:
                 self._display_metrics(e)
             milli1 = time.time() * 1000
             if train:
