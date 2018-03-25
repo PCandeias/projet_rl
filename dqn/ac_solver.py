@@ -19,6 +19,7 @@ class AcSolver(object):
         self.batch_size = batch_size
         self.verbose = verbose
         self.build_model()
+        self.EPS = 1e-8
 
     def build_model(self):
         self.model_critic = Sequential()

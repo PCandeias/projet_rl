@@ -8,34 +8,63 @@ import time
 
 
 class MultiGymRunner(object):
-    def __init__(self, n_agents=1, agent_mode='dqn', load_file=None):
+    def __init__(self, n_agents=1, agent_mode='dqn', save_filename = None, load_filename=None, save_frequency = 20000, replay_start_size=10000,
+                 gamma=0.99, eps=1.0, eps_decay=0.995, eps_min=0.05, alpha=0.0002, alpha_decay=0.01, memory_size=1000000, batch_size=64, verbose=False):
         self.n_agents = n_agents
         self.agent_mode = agent_mode
-        self._reset_metrics()
-        self._create_environment() 
+        self._create_environment()
         self.agents = []
-        if load_file is not None:
-            self._load_model(load_file)
+        self.save_filename = save_filename
+        self.save_frequency = save_frequency
+        self.replay_start_size = replay_start_size
+        if load_filename is not None:
+            self._load_agents(load_filename, gamma=gamma, alpha=alpha, alpha_decay=alpha_decay,  eps=eps,
+                              eps_decay=eps_decay, eps_min=eps_min, memory_size=memory_size, batch_size=batch_size, verbose=verbose)
         else:
-            self._create_agents()
+            self._create_agents(gamma=gamma, alpha=alpha, alpha_decay=alpha_decay, eps=eps, eps_decay=eps_decay,
+                                eps_min=eps_min,memory_size=memory_size, batch_size=batch_size, verbose=verbose)
 
     def _create_environment(self):
         raise NotImplementedError
 
-    def _create_agents(self, gamma=0.97, eps=1.0, eps_decay=0.995, eps_min=0.1, alpha=0.01,
-                 alpha_decay=0.01, memory_size=10000, batch_size=64, verbose=False):
+    def _save_agents(self, save_filename):
+        print('saving...')
+        for i in range(self.n_agents):
+            self.agents[i].save_model("" + str(i) + save_filename)
+
+    def _load_agents(self, load_filename, gamma, eps, eps_decay, eps_min, alpha, alpha_decay,
+                     memory_size, batch_size, verbose):
+        print('loading...')
+        self.agents = []
+        for i in range(self.n_agents):
+            if self.agent_mode == 'pg':
+                self.agents.append(PgSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(), eps=0.01,
+                                            gamma=gamma, memory_size=memory_size, batch_size=batch_size,
+                                            load_filename=str(i) + load_filename, verbose=verbose))
+            elif self.agent_mode == 'ac':
+                self.agents.append(AcSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
+                                            gamma=gamma, memory_size=memory_size, batch_size=batch_size,
+                                            load_filename=str(i) + load_filename, verbose=verbose))
+            else:
+                self.agents.append(DqnSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
+                                             gamma=gamma, eps=eps, eps_decay=eps_decay, eps_min=eps_min, alpha=alpha, alpha_decay=alpha_decay,
+                                             memory_size=memory_size, batch_size=batch_size, load_filename=str(i) + load_filename, verbose=verbose))
+
+    def _create_agents(self, gamma, eps, eps_decay, eps_min, alpha,
+                       alpha_decay, memory_size, batch_size, verbose):
         print("Creating agents...")
+        self.agents = []
         for i in range(self.n_agents):
             if self.agent_mode == 'pg':
                 self.agents.append(PgSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
-                    gamma=gamma, alpha=alpha, alpha_decay=alpha_decay, memory_size=memory_size, batch_size=batch_size))
+                    gamma=gamma, alpha=alpha, alpha_decay=alpha_decay, memory_size=memory_size, batch_size=batch_size, verbose=verbose))
             elif self.agent_mode == 'ac':
                 self.agents.append(AcSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
-                    gamma=gamma, alpha=alpha, alpha_decay=alpha_decay, memory_size=memory_size, batch_size=batch_size))
+                    gamma=gamma, alpha=alpha, alpha_decay=alpha_decay, memory_size=memory_size, batch_size=batch_size, verbose=verbose))
             else:
                 self.agents.append(DqnSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
                     gamma=gamma, eps=eps, eps_decay=eps_decay, eps_min=eps_min, alpha=alpha, alpha_decay=alpha_decay,
-                    memory_size=memory_size, batch_size=batch_size))
+                    memory_size=memory_size, batch_size=batch_size, verbose=verbose))
         print("Done creating agents.")
 
 
@@ -51,17 +80,25 @@ class MultiGymRunner(object):
     def get_observation_size(self):
         raise NotImplementedError
 
-    def _reset_metrics(self, r_episodes=False):
-        return
-
-    def _update_metrics(self, step, state, actions, rewards, next_state, done, score):
-        return
+    def _reset_metrics(self, display_frequency, r_episodes=False):
+        self.avg_scores = []
+        if r_episodes:
+            self.scores_episodes = []
+            self.scores_recent = deque(maxlen=display_frequency)
 
     def _display_metrics(self, ep_number):
-        return
+        print("Episode: %d Average score: %f" % (ep_number, np.mean(self.scores_recent)))
+
+    def _update_metrics(self, step, state, actions, rewards, next_state, done, score):
+        self.avg_scores.append(np.mean(rewards))
+        if done:
+            ep_score = np.sum(self.avg_scores)
+            self.avg_scores = [] # reset episode scores
+            self.scores_episodes.append(ep_score)
+            self.scores_recent.append(ep_score)
 
     def get_metrics(self):
-        return
+        return self.scores_episodes
 
     def get_predictions(self, state):
         predictions = []
@@ -88,22 +125,23 @@ class MultiGymRunner(object):
             actions.append(agent.select_action(state))
         return actions
 
+    def _stop_condition(self, episode_number):
+        return False
+
     """
     Do any post processing on the action array required by the environment
     """
     def _process_actions(self, actions):
         return actions
 
-    def run(self, n_episodes, train=False, render=False, verbose=False):
-        total_training = 0
-        total_running = 0
-        self._reset_metrics(r_episodes = True)
+    def run(self, n_episodes, train=False, render=False, verbose=False, display_frequency=1000):
+        total_steps = 0
+        self._reset_metrics(r_episodes = True, display_frequency=display_frequency)
         for e in range(n_episodes):
             step = 0
             score = np.zeros(self.n_agents, dtype=np.float64)
             done = False
             state = self._preprocess_state(self.env.reset())
-            milli1 = time.time() * 1000
             while not done:
                 if render:
                     self.env.render()
@@ -117,14 +155,16 @@ class MultiGymRunner(object):
                 if train:
                     self._store_transitions(state, actions, rewards, next_state, done)
                 state = next_state
-            milli2 = time.time() * 1000
-            total_running += (milli2 - milli1)
-            if verbose and (e+1)%10 == 0:
+            total_steps += step
+            if verbose and (e+1)%display_frequency == 0:
                 self._display_metrics(e)
-            milli1 = time.time() * 1000
             if train:
-                self._train_agents()
-            milli2 = time.time() * 1000
-            total_training += (milli2 - milli1)
-        print("Time running: %f  Time training: %f" % (total_running, total_training))
+                if self._stop_condition(e):
+                    break
+                elif total_steps >= self.replay_start_size:
+                    self._train_agents()
+            if self.save_filename is not None and train and (e+1) % self.save_frequency == 0:
+                self._save_agents(self.save_filename)
+        if self.save_filename is not None and train:
+            self._save_agents(self.save_filename)
         return self.get_metrics()
