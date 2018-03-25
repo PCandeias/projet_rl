@@ -19,6 +19,6 @@ class MultiBreakoutRunner(MultiGymRunner):
     def _process_actions(self, actions):
         return actions[0] 
 
-runner = MultiBreakoutRunner(1, agent_mode='pg', save_filename='breakout', save_frequency=20000)
+runner = MultiBreakoutRunner(1, agent_mode='pg', save_filename='breakout', load_filename='breakout', save_frequency=20000)
 runner.run(n_episodes=10000000, train=True, verbose=True)
 runner.run(n_episodes=100, train=False)
