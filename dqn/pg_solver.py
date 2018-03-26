@@ -21,7 +21,6 @@ class PgSolver(object):
         self.alpha_decay = alpha_decay
         self.batch_size = batch_size
         self.verbose = verbose
-        self.EPS = 1e-8
         if load_filename is not None and utility.file_exists(utility.models_directory +  load_filename + "_pg.h5"):
             self.load_model(load_filename)
         else:
