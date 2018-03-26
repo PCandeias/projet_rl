@@ -22,16 +22,16 @@ class PgSolver(object):
         self.batch_size = batch_size
         self.verbose = verbose
         self.EPS = 1e-8
-        if load_filename is not None and utility.file_exists(utility.models_directory + "pg_" + load_filename + ".h5"):
+        if load_filename is not None and utility.file_exists(utility.models_directory +  load_filename + "_pg.h5"):
             self.load_model(load_filename)
         else:
             self.build_model()
 
     def load_model(self, load_filename):
-        self.model = load_model(utility.models_directory + "pg_" + load_filename + ".h5")
+        self.model = load_model(utility.models_directory + load_filename + "_pg.h5")
 
     def save_model(self, save_filename):
-        self.model.save(utility.models_directory + "pg_" + save_filename + ".h5")
+        self.model.save(utility.models_directory + save_filename + "_pg.h5")
 
     def build_model(self):
         self.model = Sequential()

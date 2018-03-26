@@ -9,7 +9,7 @@ import time
 
 class MultiGymRunner(object):
     def __init__(self, n_agents=1, agent_mode='dqn', save_filename = None, load_filename=None, save_frequency = 20000, replay_start_size=10000,
-                 gamma=0.99, eps=1.0, eps_decay=0.995, eps_min=0.05, alpha=0.0002, alpha_decay=0.01, memory_size=1000000, batch_size=64, verbose=False):
+                 gamma=0.99, eps=1.0, eps_decay=0.995, eps_min=0.05, alpha=0.01, alpha_decay=0.01, memory_size=1000000, batch_size=64, verbose=False):
         self.n_agents = n_agents
         self.agent_mode = agent_mode
         self._create_environment()
@@ -30,7 +30,7 @@ class MultiGymRunner(object):
     def _save_agents(self, save_filename):
         print('saving...')
         for i in range(self.n_agents):
-            self.agents[i].save_model("" + str(i) + save_filename)
+            self.agents[i].save_model(save_filename + str(i))
 
     def _load_agents(self, load_filename, gamma, eps, eps_decay, eps_min, alpha, alpha_decay,
                      memory_size, batch_size, verbose):
@@ -40,15 +40,15 @@ class MultiGymRunner(object):
             if self.agent_mode == 'pg':
                 self.agents.append(PgSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(), eps=0.01,
                                             gamma=gamma, memory_size=memory_size, batch_size=batch_size,
-                                            load_filename=str(i) + load_filename, verbose=verbose))
+                                            load_filename=load_filename + str(i), verbose=verbose))
             elif self.agent_mode == 'ac':
                 self.agents.append(AcSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
                                             gamma=gamma, memory_size=memory_size, batch_size=batch_size,
-                                            load_filename=str(i) + load_filename, verbose=verbose))
+                                            load_filename=load_filename + str(i), verbose=verbose))
             else:
                 self.agents.append(DqnSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
                                              gamma=gamma, eps=eps, eps_decay=eps_decay, eps_min=eps_min, alpha=alpha, alpha_decay=alpha_decay,
-                                             memory_size=memory_size, batch_size=batch_size, load_filename=str(i) + load_filename, verbose=verbose))
+                                             memory_size=memory_size, batch_size=batch_size, load_filename=load_filename + str(i), verbose=verbose))
 
     def _create_agents(self, gamma, eps, eps_decay, eps_min, alpha,
                        alpha_decay, memory_size, batch_size, verbose):
