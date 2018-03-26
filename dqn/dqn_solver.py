@@ -24,18 +24,18 @@ class DqnSolver(object):
         self.verbose = verbose
         self.freeze_frequency = freeze_frequency
         self.replay_count = 0
-        if load_filename is not None and utility.file_exists(utility.models_directory + "dqn_" + load_filename + ".h5"):
+        if load_filename is not None and utility.file_exists(utility.models_directory + load_filename + "_dqn.h5"):
             self.load_model(load_filename)
             self.eps = eps_min
         else:
             self.build_model(alpha, alpha_decay)
 
     def load_model(self, load_filename):
-        self.model = load_model(utility.models_directory + "dqn_" + load_filename + ".h5")
+        self.model = load_model(utility.models_directory + load_filename + "_dqn.h5")
         self.target_model = clone_model(self.model)
 
     def save_model(self, save_filename):
-        self.model.save(utility.models_directory + "dqn_" + save_filename + ".h5")
+        self.model.save(utility.models_directory + save_filename + "_dqn.h5")
 
     def build_model(self, alpha, alpha_decay):
         self.model = Sequential()

@@ -24,6 +24,7 @@ class MultiCartpoleRunner(MultiGymRunner):
 
 #runner = MultiCartpoleRunner(1, agent_mode='pg', load_filename='cartpole', save_filename='cartpole')
 #runner = MultiCartpoleRunner(1, agent_mode='dqn')
-runner = MultiCartpoleRunner(1, agent_mode='pg',  save_filename='cartpole', load_filename='cartpole')
-runner.run(n_episodes=200000, train=True, verbose=True, display_frequency=10)
+runner = MultiCartpoleRunner(1, agent_mode='ac',  save_filename='cartpole', load_filename='cartpole',
+        save_frequency=1000)
+runner.run(n_episodes=200000, train=True, verbose=True, display_frequency=1000)
 runner.run(n_episodes=100, train=False)
