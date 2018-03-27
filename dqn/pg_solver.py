@@ -11,6 +11,7 @@ import utility
 class PgSolver(object):
     def __init__(self, observation_size, action_size, gamma=0.97, alpha=0.01, eps=0.01,
                  alpha_decay=0.01, memory_size=10000, batch_size=64, verbose=False, save_filename=None, load_filename=None):
+        print("EPS", eps)
         self.memory = deque(maxlen=memory_size)
         self.ep_step = []
         self.observation_size = observation_size
@@ -27,6 +28,7 @@ class PgSolver(object):
             self.build_model()
 
     def load_model(self, load_filename):
+        print("Loading existing model...")
         self.model = load_model(utility.models_directory + load_filename + "_pg.h5")
 
     def save_model(self, save_filename):
@@ -36,6 +38,8 @@ class PgSolver(object):
         self.model = Sequential()
         self.model.add(Dense(units=200, activation='tanh', input_dim=self.observation_size))
         self.model.add(Dense(units=200, activation='tanh'))
+        self.model.add(Dense(units=100, activation='tanh'))
+        self.model.add(Dense(units=50, activation='tanh'))
         self.model.add(Dense(units=self.action_size, activation='softmax'))
         print("Creatin", self.alpha)
         self.model.compile(loss='categorical_crossentropy', optimizer=keras.optimizers.Adam(lr=self.alpha, decay=self.alpha_decay))
@@ -73,8 +77,8 @@ class PgSolver(object):
             y_batch.append(action)
             weights.append(reward)
         weights = np.array(weights)
-        weights = (weights - np.mean(weights)) / np.std(weights)
+        weights = (weights - np.mean(weights)) / np.std(weights) # normalize weights
         self.model.fit(np.array(x_batch), np_utils.to_categorical(np.array(y_batch), self.action_size),
-                sample_weight=np.array(weights), batch_size=batch_size, verbose=self.verbose)
+                sample_weight=weights, batch_size=batch_size, verbose=self.verbose)
 
 
