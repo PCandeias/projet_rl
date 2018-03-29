@@ -6,92 +6,167 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 AcSolver	dqn/ac_solver.py	/^class AcSolver(object):$/;"	c
 CartPoleRunner	dqn/cartpole_runner.py	/^class CartPoleRunner(GymRunner):$/;"	c
+CartPoleRunner	dqn/old/cartpole_runner.py	/^class CartPoleRunner(GymRunner):$/;"	c
 DqnSolver	dqn/dqn_solver.py	/^class DqnSolver(object):$/;"	c
+EPS	dqn/utility.py	/^EPS = 1e-8$/;"	v
 GymRunner	dqn/gym_runner.py	/^class GymRunner(object):$/;"	c
+GymRunner	dqn/old/gym_runner.py	/^class GymRunner(object):$/;"	c
 LiveGraph	dqn/live_graph.py	/^class LiveGraph(object):$/;"	c
+LiveGraph	dqn/old/live_graph.py	/^class LiveGraph(object):$/;"	c
 MountainCarRunner	dqn/mountaincar_runner.py	/^class MountainCarRunner(GymRunner):$/;"	c
+MultiBreakoutRunner	dqn/multi_breakout_runner.py	/^class MultiBreakoutRunner(MultiGymRunner):$/;"	c
 MultiCartpoleRunner	dqn/multi_cartpole_runner.py	/^class MultiCartpoleRunner(MultiGymRunner):$/;"	c
+MultiCartpoleRunner	dqn/multi_mountaincar_runner.py	/^class MultiCartpoleRunner(MultiGymRunner):$/;"	c
+MultiCartpoleRunner	dqn/taxi_runner.py	/^class MultiCartpoleRunner(MultiGymRunner):$/;"	c
+MultiEnduroRunner	dqn/multi_enduro_runner.py	/^class MultiEnduroRunner(MultiGymRunner):$/;"	c
 MultiFishermanRunner	dqn/multi_fisherman_runner.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
 MultiGymRunner	dqn/multi_gym_runner.py	/^class MultiGymRunner(object):$/;"	c
+MultiLunarLanderRunner	dqn/multi_lunarlander.py	/^class MultiLunarLanderRunner(MultiGymRunner):$/;"	c
 PgSolver	dqn/pg_solver.py	/^class PgSolver(object):$/;"	c
 RandomFishermanEnv	fisherman_dilemma/fisherman_random.py	/^class RandomFishermanEnv(gym.Env):$/;"	c
-__init__	dqn/ac_solver.py	/^    def __init__(self, observation_size, action_size, gamma=0.97, alpha=0.01,$/;"	m	class:AcSolver
-__init__	dqn/dqn_solver.py	/^    def __init__(self, observation_size, action_size, gamma=0.97, eps=1.0, eps_decay=0.995, eps_min=0.1, alpha=0.01,$/;"	m	class:DqnSolver
+__init__	dqn/ac_solver.py	/^    def __init__(self, observation_size, action_size, gamma=0.97, alpha=0.01, alpha_decay=0.01, memory_size=10000, $/;"	m	class:AcSolver
+__init__	dqn/dqn_solver.py	/^    def __init__(self, observation_size, action_size, gamma=0.97, eps=1.0, eps_decay=0.9995, eps_min=0.1, alpha=0.01,$/;"	m	class:DqnSolver
 __init__	dqn/gym_runner.py	/^    def __init__(self):$/;"	m	class:GymRunner
 __init__	dqn/live_graph.py	/^    def __init__(self, maxlen=100, lines=1, labels=None):$/;"	m	class:LiveGraph
-__init__	dqn/multi_gym_runner.py	/^    def __init__(self, n_agents=1, agent_mode='dqn'):$/;"	m	class:MultiGymRunner
-__init__	dqn/pg_solver.py	/^    def __init__(self, observation_size, action_size, gamma=0.97, alpha=0.01,$/;"	m	class:PgSolver
+__init__	dqn/multi_gym_runner.py	/^    def __init__(self, n_agents=1, agent_mode='dqn', save_filename = None, load_filename=None, save_frequency = 20000, replay_start_size=10000,$/;"	m	class:MultiGymRunner
+__init__	dqn/old/gym_runner.py	/^    def __init__(self):$/;"	m	class:GymRunner
+__init__	dqn/old/live_graph.py	/^    def __init__(self, maxlen=100, lines=1, labels=None):$/;"	m	class:LiveGraph
+__init__	dqn/pg_solver.py	/^    def __init__(self, observation_size, action_size, gamma=0.97, alpha=0.01, eps=0.01,$/;"	m	class:PgSolver
 __init__	fisherman_dilemma/fisherman_random.py	/^    def __init__(self):$/;"	m	class:RandomFishermanEnv
-_create_agents	dqn/multi_gym_runner.py	/^    def _create_agents(self, gamma=0.97, eps=1.0, eps_decay=0.995, eps_min=0.1, alpha=0.01,$/;"	m	class:MultiGymRunner
+_create_agents	dqn/multi_gym_runner.py	/^    def _create_agents(self, load_filename, gamma, eps, eps_decay, eps_min, alpha,$/;"	m	class:MultiGymRunner
+_create_environment	dqn/multi_breakout_runner.py	/^    def _create_environment(self):$/;"	m	class:MultiBreakoutRunner
 _create_environment	dqn/multi_cartpole_runner.py	/^    def _create_environment(self):$/;"	m	class:MultiCartpoleRunner
+_create_environment	dqn/multi_enduro_runner.py	/^    def _create_environment(self):$/;"	m	class:MultiEnduroRunner
 _create_environment	dqn/multi_fisherman_runner.py	/^    def _create_environment(self):$/;"	m	class:MultiFishermanRunner
 _create_environment	dqn/multi_gym_runner.py	/^    def _create_environment(self):$/;"	m	class:MultiGymRunner
-_display_metrics	dqn/multi_cartpole_runner.py	/^    def _display_metrics(self, ep_number):$/;"	m	class:MultiCartpoleRunner
+_create_environment	dqn/multi_lunarlander.py	/^    def _create_environment(self):$/;"	m	class:MultiLunarLanderRunner
+_create_environment	dqn/multi_mountaincar_runner.py	/^    def _create_environment(self):$/;"	m	class:MultiCartpoleRunner
+_create_environment	dqn/taxi_runner.py	/^    def _create_environment(self):$/;"	m	class:MultiCartpoleRunner
+_display_metrics	dqn/multi_enduro_runner.py	/^    def _display_metrics(self, ep_number):$/;"	m	class:MultiEnduroRunner
 _display_metrics	dqn/multi_fisherman_runner.py	/^    def _display_metrics(self, ep_number):$/;"	m	class:MultiFishermanRunner
 _display_metrics	dqn/multi_gym_runner.py	/^    def _display_metrics(self, ep_number):$/;"	m	class:MultiGymRunner
+_display_metrics	dqn/multi_mountaincar_runner.py	/^    def _display_metrics(self, ep_number):$/;"	m	class:MultiCartpoleRunner
+_preprocess_reward	dqn/multi_breakout_runner.py	/^    def _preprocess_reward(self, reward):$/;"	m	class:MultiBreakoutRunner
 _preprocess_reward	dqn/multi_cartpole_runner.py	/^    def _preprocess_reward(self, reward):$/;"	m	class:MultiCartpoleRunner
+_preprocess_reward	dqn/multi_enduro_runner.py	/^    def _preprocess_reward(self, reward):$/;"	m	class:MultiEnduroRunner
 _preprocess_reward	dqn/multi_gym_runner.py	/^    def _preprocess_reward(self, reward):$/;"	m	class:MultiGymRunner
+_preprocess_reward	dqn/multi_lunarlander.py	/^    def _preprocess_reward(self, reward):$/;"	m	class:MultiLunarLanderRunner
+_preprocess_reward	dqn/multi_mountaincar_runner.py	/^    def _preprocess_reward(self, reward):$/;"	m	class:MultiCartpoleRunner
+_preprocess_reward	dqn/taxi_runner.py	/^    def _preprocess_reward(self, reward):$/;"	m	class:MultiCartpoleRunner
 _preprocess_state	dqn/multi_gym_runner.py	/^    def _preprocess_state(self, state):$/;"	m	class:MultiGymRunner
+_process_actions	dqn/multi_breakout_runner.py	/^    def _process_actions(self, actions):$/;"	m	class:MultiBreakoutRunner
 _process_actions	dqn/multi_cartpole_runner.py	/^    def _process_actions(self, actions):$/;"	m	class:MultiCartpoleRunner
+_process_actions	dqn/multi_enduro_runner.py	/^    def _process_actions(self, actions):$/;"	m	class:MultiEnduroRunner
 _process_actions	dqn/multi_gym_runner.py	/^    def _process_actions(self, actions):$/;"	m	class:MultiGymRunner
-_reset_metrics	dqn/multi_cartpole_runner.py	/^    def _reset_metrics(self, r_episodes=False):$/;"	m	class:MultiCartpoleRunner
+_process_actions	dqn/multi_lunarlander.py	/^    def _process_actions(self, actions):$/;"	m	class:MultiLunarLanderRunner
+_process_actions	dqn/multi_mountaincar_runner.py	/^    def _process_actions(self, actions):$/;"	m	class:MultiCartpoleRunner
+_process_actions	dqn/taxi_runner.py	/^    def _process_actions(self, actions):$/;"	m	class:MultiCartpoleRunner
+_reset_metrics	dqn/multi_enduro_runner.py	/^    def _reset_metrics(self, r_episodes=False):$/;"	m	class:MultiEnduroRunner
 _reset_metrics	dqn/multi_fisherman_runner.py	/^    def _reset_metrics(self, r_episodes=False):$/;"	m	class:MultiFishermanRunner
-_reset_metrics	dqn/multi_gym_runner.py	/^    def _reset_metrics(self, r_episodes=False):$/;"	m	class:MultiGymRunner
+_reset_metrics	dqn/multi_gym_runner.py	/^    def _reset_metrics(self, display_frequency, r_episodes=False):$/;"	m	class:MultiGymRunner
+_reset_metrics	dqn/multi_mountaincar_runner.py	/^    def _reset_metrics(self, r_episodes=False):$/;"	m	class:MultiCartpoleRunner
+_save_agents	dqn/multi_gym_runner.py	/^    def _save_agents(self, save_filename):$/;"	m	class:MultiGymRunner
 _select_actions	dqn/multi_gym_runner.py	/^    def _select_actions(self, state):$/;"	m	class:MultiGymRunner
+_stop_condition	dqn/multi_cartpole_runner.py	/^    def _stop_condition(self, episode_number):$/;"	m	class:MultiCartpoleRunner
+_stop_condition	dqn/multi_gym_runner.py	/^    def _stop_condition(self, episode_number):$/;"	m	class:MultiGymRunner
 _store_transitions	dqn/multi_gym_runner.py	/^    def _store_transitions(self, state, actions, rewards, next_state, done):$/;"	m	class:MultiGymRunner
 _train_agents	dqn/multi_gym_runner.py	/^    def _train_agents(self):$/;"	m	class:MultiGymRunner
-_update_metrics	dqn/multi_cartpole_runner.py	/^    def _update_metrics(self, step, state, actions, rewards, next_state, done, score):$/;"	m	class:MultiCartpoleRunner
+_update_metrics	dqn/multi_enduro_runner.py	/^    def _update_metrics(self, step, state, actions, rewards, next_state, done, score):$/;"	m	class:MultiEnduroRunner
 _update_metrics	dqn/multi_fisherman_runner.py	/^    def _update_metrics(self, step, state, actions, rewards, next_state, done, score):$/;"	m	class:MultiFishermanRunner
 _update_metrics	dqn/multi_gym_runner.py	/^    def _update_metrics(self, step, state, actions, rewards, next_state, done, score):$/;"	m	class:MultiGymRunner
+_update_metrics	dqn/multi_mountaincar_runner.py	/^    def _update_metrics(self, step, state, actions, rewards, next_state, done, score):$/;"	m	class:MultiCartpoleRunner
+a	dqn/test.py	/^a = DqnSolver(action_size=2, observation_size=1, alpha=0.0002)$/;"	v
 add_value	dqn/live_graph.py	/^    def add_value(self, new_values):$/;"	m	class:LiveGraph
-build_model	dqn/ac_solver.py	/^    def build_model(self):$/;"	m	class:AcSolver
-build_model	dqn/dqn_solver.py	/^    def build_model(self):$/;"	m	class:DqnSolver
+add_value	dqn/old/live_graph.py	/^    def add_value(self, new_values):$/;"	m	class:LiveGraph
+b	dqn/test.py	/^b = utility.copy_model(a.model)$/;"	v
+build_model	dqn/ac_solver.py	/^    def build_model(self, alpha, alpha_decay):$/;"	m	class:AcSolver
+build_model	dqn/dqn_solver.py	/^    def build_model(self, alpha, alpha_decay):$/;"	m	class:DqnSolver
 build_model	dqn/pg_solver.py	/^    def build_model(self):$/;"	m	class:PgSolver
 close	fisherman_dilemma/fisherman_random.py	/^    def close(self):$/;"	m	class:RandomFishermanEnv
+copy_model	dqn/utility.py	/^def copy_model(model):$/;"	f
 create_agent	dqn/gym_runner.py	/^    def create_agent(self, gamma=1.0, eps=1.0, eps_decay=0.99, eps_min=0.05, alpha=0.01, alpha_decay=0.01):$/;"	m	class:GymRunner
 create_agent	dqn/mountaincar_runner.py	/^    def create_agent(self):$/;"	m	class:MountainCarRunner
+create_agent	dqn/old/gym_runner.py	/^    def create_agent(self, gamma=1.0, eps=1.0, eps_decay=0.99, eps_min=0.05, alpha=0.01, alpha_decay=0.01):$/;"	m	class:GymRunner
 create_environment	dqn/cartpole_runner.py	/^    def create_environment(self):$/;"	m	class:CartPoleRunner
 create_environment	dqn/gym_runner.py	/^    def create_environment(self):$/;"	m	class:GymRunner
 create_environment	dqn/mountaincar_runner.py	/^    def create_environment(self):$/;"	m	class:MountainCarRunner
+create_environment	dqn/old/cartpole_runner.py	/^    def create_environment(self):$/;"	m	class:CartPoleRunner
+create_environment	dqn/old/gym_runner.py	/^    def create_environment(self):$/;"	m	class:GymRunner
+file_exists	dqn/utility.py	/^def file_exists(filename):$/;"	f
+find	dqn/old/parameter_finder.py	/^def find(runner, v_gamma, v_eps, v_eps_decay, v_eps_min, v_alpha, v_alpha_decay, n_epochs=2, n_episodes=1000,$/;"	f
 find	dqn/parameter_finder.py	/^def find(runner, v_gamma, v_eps, v_eps_decay, v_eps_min, v_alpha, v_alpha_decay, n_epochs=2, n_episodes=1000,$/;"	f
+freeze_target	dqn/dqn_solver.py	/^    def freeze_target(self):$/;"	m	class:DqnSolver
 get_action_size	dqn/cartpole_runner.py	/^    def get_action_size(self):$/;"	m	class:CartPoleRunner
 get_action_size	dqn/gym_runner.py	/^    def get_action_size(self):$/;"	m	class:GymRunner
+get_action_size	dqn/multi_breakout_runner.py	/^    def get_action_size(self):$/;"	m	class:MultiBreakoutRunner
 get_action_size	dqn/multi_cartpole_runner.py	/^    def get_action_size(self):$/;"	m	class:MultiCartpoleRunner
+get_action_size	dqn/multi_enduro_runner.py	/^    def get_action_size(self):$/;"	m	class:MultiEnduroRunner
 get_action_size	dqn/multi_fisherman_runner.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
 get_action_size	dqn/multi_gym_runner.py	/^    def get_action_size(self):$/;"	m	class:MultiGymRunner
-get_metrics	dqn/multi_cartpole_runner.py	/^    def get_metrics(self):$/;"	m	class:MultiCartpoleRunner
+get_action_size	dqn/multi_lunarlander.py	/^    def get_action_size(self):$/;"	m	class:MultiLunarLanderRunner
+get_action_size	dqn/multi_mountaincar_runner.py	/^    def get_action_size(self):$/;"	m	class:MultiCartpoleRunner
+get_action_size	dqn/old/cartpole_runner.py	/^    def get_action_size(self):$/;"	m	class:CartPoleRunner
+get_action_size	dqn/old/gym_runner.py	/^    def get_action_size(self):$/;"	m	class:GymRunner
+get_action_size	dqn/taxi_runner.py	/^    def get_action_size(self):$/;"	m	class:MultiCartpoleRunner
+get_metrics	dqn/multi_enduro_runner.py	/^    def get_metrics(self):$/;"	m	class:MultiEnduroRunner
 get_metrics	dqn/multi_fisherman_runner.py	/^    def get_metrics(self):$/;"	m	class:MultiFishermanRunner
 get_metrics	dqn/multi_gym_runner.py	/^    def get_metrics(self):$/;"	m	class:MultiGymRunner
+get_metrics	dqn/multi_mountaincar_runner.py	/^    def get_metrics(self):$/;"	m	class:MultiCartpoleRunner
 get_observation_size	dqn/cartpole_runner.py	/^    def get_observation_size(self):$/;"	m	class:CartPoleRunner
 get_observation_size	dqn/gym_runner.py	/^    def get_observation_size(self):$/;"	m	class:GymRunner
+get_observation_size	dqn/multi_breakout_runner.py	/^    def get_observation_size(self):$/;"	m	class:MultiBreakoutRunner
 get_observation_size	dqn/multi_cartpole_runner.py	/^    def get_observation_size(self):$/;"	m	class:MultiCartpoleRunner
+get_observation_size	dqn/multi_enduro_runner.py	/^    def get_observation_size(self):$/;"	m	class:MultiEnduroRunner
 get_observation_size	dqn/multi_fisherman_runner.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
 get_observation_size	dqn/multi_gym_runner.py	/^    def get_observation_size(self):$/;"	m	class:MultiGymRunner
+get_observation_size	dqn/multi_lunarlander.py	/^    def get_observation_size(self):$/;"	m	class:MultiLunarLanderRunner
+get_observation_size	dqn/multi_mountaincar_runner.py	/^    def get_observation_size(self):$/;"	m	class:MultiCartpoleRunner
+get_observation_size	dqn/old/cartpole_runner.py	/^    def get_observation_size(self):$/;"	m	class:CartPoleRunner
+get_observation_size	dqn/old/gym_runner.py	/^    def get_observation_size(self):$/;"	m	class:GymRunner
+get_observation_size	dqn/taxi_runner.py	/^    def get_observation_size(self):$/;"	m	class:MultiCartpoleRunner
 get_predictions	dqn/multi_gym_runner.py	/^    def get_predictions(self, state):$/;"	m	class:MultiGymRunner
-get_probabilities	dqn/ac_solver.py	/^    def get_probabilities(self):$/;"	m	class:AcSolver
+get_probabilities	dqn/ac_solver.py	/^    def get_probabilities(self, state):$/;"	m	class:AcSolver
 get_probabilities	dqn/pg_solver.py	/^    def get_probabilities(self, state):$/;"	m	class:PgSolver
 get_values	dqn/ac_solver.py	/^    def get_values(self, state):$/;"	m	class:AcSolver
 get_values	dqn/dqn_solver.py	/^    def get_values(self, state):$/;"	m	class:DqnSolver
+load_model	dqn/ac_solver.py	/^    def load_model(self, load_filename):$/;"	m	class:AcSolver
+load_model	dqn/dqn_solver.py	/^    def load_model(self, load_filename):$/;"	m	class:DqnSolver
+load_model	dqn/pg_solver.py	/^    def load_model(self, load_filename):$/;"	m	class:PgSolver
+models_directory	dqn/utility.py	/^models_directory = "models\/"$/;"	v
 preprocess_reward	dqn/gym_runner.py	/^    def preprocess_reward(self, reward):$/;"	m	class:GymRunner
+preprocess_reward	dqn/old/gym_runner.py	/^    def preprocess_reward(self, reward):$/;"	m	class:GymRunner
 preprocess_state	dqn/cartpole_runner.py	/^    def preprocess_state(self, state):$/;"	m	class:CartPoleRunner
 preprocess_state	dqn/gym_runner.py	/^    def preprocess_state(self, state):$/;"	m	class:GymRunner
 preprocess_state	dqn/mountaincar_runner.py	/^    def preprocess_state(self, state):$/;"	m	class:MountainCarRunner
+preprocess_state	dqn/old/cartpole_runner.py	/^    def preprocess_state(self, state):$/;"	m	class:CartPoleRunner
+preprocess_state	dqn/old/gym_runner.py	/^    def preprocess_state(self, state):$/;"	m	class:GymRunner
 render	fisherman_dilemma/fisherman_random.py	/^    def render(self):$/;"	m	class:RandomFishermanEnv
 replay	dqn/ac_solver.py	/^    def replay(self):$/;"	m	class:AcSolver
 replay	dqn/dqn_solver.py	/^    def replay(self):$/;"	m	class:DqnSolver
 replay	dqn/pg_solver.py	/^    def replay(self):$/;"	m	class:PgSolver
 reset	fisherman_dilemma/fisherman_random.py	/^    def reset(self):$/;"	m	class:RandomFishermanEnv
 run	dqn/gym_runner.py	/^    def run(self, n_episodes, train=False, render=False, goal_score=None, verbose=False):$/;"	m	class:GymRunner
-run	dqn/multi_gym_runner.py	/^    def run(self, n_episodes, train=False, render=False, verbose=False):$/;"	m	class:MultiGymRunner
+run	dqn/multi_gym_runner.py	/^    def run(self, n_episodes, train=False, render=False, verbose=False, display_frequency=1000):$/;"	m	class:MultiGymRunner
+run	dqn/old/gym_runner.py	/^    def run(self, n_episodes, train=False, render=False, goal_score=None, verbose=False):$/;"	m	class:GymRunner
 runner	dqn/cartpole_runner.py	/^runner = CartPoleRunner()$/;"	v
 runner	dqn/mountaincar_runner.py	/^runner = MountainCarRunner()$/;"	v
-runner	dqn/multi_cartpole_runner.py	/^runner = MultiCartpoleRunner(1, agent_mode='pg')$/;"	v
-runner	dqn/multi_fisherman_runner.py	/^runner = MultiFishermanRunner(10, agent_mode='pg')$/;"	v
-select_action	dqn/ac_solver.py	/^    def select_action(self, state):$/;"	m	class:AcSolver
+runner	dqn/multi_breakout_runner.py	/^runner = MultiBreakoutRunner(1, agent_mode='pg', save_filename='breakout', load_filename='breakout', save_frequency=20000)$/;"	v
+runner	dqn/multi_cartpole_runner.py	/^    runner = MultiCartpoleRunner(n_agents=1, agent_mode='ac', save_filename = 'cartpole', load_filename='cartpole',$/;"	v
+runner	dqn/multi_enduro_runner.py	/^runner = MultiEnduroRunner(1, agent_mode='pg')$/;"	v
+runner	dqn/multi_fisherman_runner.py	/^runner = MultiFishermanRunner(10, agent_mode='pg', save_filename='fisherman')$/;"	v
+runner	dqn/multi_lunarlander.py	/^runner = MultiLunarLanderRunner(1, agent_mode='dqn',  save_filename='lunar_lander', save_frequency=10000)$/;"	v
+runner	dqn/multi_mountaincar_runner.py	/^runner = MultiCartpoleRunner(1, agent_mode='dqn', save_filename='mountaincar')$/;"	v
+runner	dqn/old/cartpole_runner.py	/^runner = CartPoleRunner()$/;"	v
+runner	dqn/taxi_runner.py	/^runner = MultiCartpoleRunner(1, agent_mode='pg',  save_filename='taxi', load_filename='taxi')$/;"	v
+save_model	dqn/ac_solver.py	/^    def save_model(self, save_filename):$/;"	m	class:AcSolver
+save_model	dqn/dqn_solver.py	/^    def save_model(self, save_filename):$/;"	m	class:DqnSolver
+save_model	dqn/pg_solver.py	/^    def save_model(self, save_filename):$/;"	m	class:PgSolver
+select_action	dqn/ac_solver.py	/^    def select_action(self, state, eps=None):$/;"	m	class:AcSolver
 select_action	dqn/dqn_solver.py	/^    def select_action(self, state, eps=None):$/;"	m	class:DqnSolver
-select_action	dqn/pg_solver.py	/^    def select_action(self, state):$/;"	m	class:PgSolver
+select_action	dqn/pg_solver.py	/^    def select_action(self, state, eps=None):$/;"	m	class:PgSolver
 set_environment_variables	fisherman_dilemma/fisherman_random.py	/^    def set_environment_variables(self, max_stock, initial_stock, population, n_agents, growth_rate, max_steps):$/;"	m	class:RandomFishermanEnv
 show	dqn/live_graph.py	/^    def show(self):$/;"	m	class:LiveGraph
+show	dqn/old/live_graph.py	/^    def show(self):$/;"	m	class:LiveGraph
 step	fisherman_dilemma/fisherman_random.py	/^    def step(self, actions):$/;"	m	class:RandomFishermanEnv
 store	dqn/ac_solver.py	/^    def store(self, state, action, reward, next_state, done):$/;"	m	class:AcSolver
 store	dqn/dqn_solver.py	/^    def store(self, state, action, reward, next_state, done):$/;"	m	class:DqnSolver

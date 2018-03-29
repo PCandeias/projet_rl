@@ -9,7 +9,8 @@ import time
 
 class MultiGymRunner(object):
     def __init__(self, n_agents=1, agent_mode='dqn', save_filename = None, load_filename=None, save_frequency = 20000, replay_start_size=10000,
-                 gamma=0.99, eps=1.0, eps_decay=0.995, eps_min=0.05, alpha=0.01, alpha_decay=0.01, memory_size=1000000, batch_size=64, verbose=False):
+                 gamma=0.99, eps=1.0, eps_decay=0.995, eps_min=0.05, alpha=0.01, alpha_decay=0.01, memory_size=1000000, batch_size=64,
+                 freeze_target_frequency=500, verbose=False):
         self.n_agents = n_agents
         self.agent_mode = agent_mode
         self._create_environment()
@@ -18,7 +19,8 @@ class MultiGymRunner(object):
         self.save_frequency = save_frequency
         self.replay_start_size = replay_start_size
         self._create_agents(load_filename=load_filename, gamma=gamma, alpha=alpha, alpha_decay=alpha_decay, eps=eps, eps_decay=eps_decay,
-                            eps_min=eps_min,memory_size=memory_size, batch_size=batch_size, verbose=verbose)
+                            eps_min=eps_min,memory_size=memory_size, batch_size=batch_size, freeze_target_frequency=freeze_target_frequency,
+                            verbose=verbose)
 
     def _create_environment(self):
         raise NotImplementedError
@@ -29,7 +31,7 @@ class MultiGymRunner(object):
             self.agents[i].save_model(save_filename + str(i))
 
     def _create_agents(self, load_filename, gamma, eps, eps_decay, eps_min, alpha,
-                       alpha_decay, memory_size, batch_size, verbose):
+                       alpha_decay, memory_size, batch_size, freeze_target_frequency, verbose):
         print("Creating agents...")
         print(alpha)
         self.agents = []
@@ -37,15 +39,17 @@ class MultiGymRunner(object):
             if self.agent_mode == 'pg':
                 self.agents.append(PgSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
                     gamma=gamma, alpha=alpha, alpha_decay=alpha_decay, memory_size=memory_size, batch_size=batch_size,
-                    verbose=verbose, load_filename=load_filename + str(i)))
+                    verbose=verbose, load_filename=load_filename + str(i) if load_filename else None))
             elif self.agent_mode == 'ac':
                 self.agents.append(AcSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
                     gamma=gamma, alpha=alpha, alpha_decay=alpha_decay, memory_size=memory_size, batch_size=batch_size,
-                    verbose=verbose, load_filename=load_filename + str(i)))
+                    freeze_target_frequency=freeze_target_frequency, verbose=verbose, load_filename=load_filename + str(i) if load_filename else None))
             else:
                 self.agents.append(DqnSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
-                    gamma=gamma, eps=eps, eps_decay=eps_decay, eps_min=eps_min, alpha=alpha, alpha_decay=alpha_decay,
-                    memory_size=memory_size, batch_size=batch_size, verbose=verbose, load_filename=load_filename + str(i)))
+                                             gamma=gamma, eps=eps, eps_decay=eps_decay, eps_min=eps_min, alpha=alpha,
+                                             alpha_decay=alpha_decay, memory_size=memory_size, batch_size=batch_size,
+                                             freeze_target_frequency=freeze_target_frequency,
+                                             verbose=verbose, load_filename=load_filename + str(i) if load_filename else None))
         print("Done creating agents.")
 
 
@@ -65,10 +69,9 @@ class MultiGymRunner(object):
         self.avg_scores = []
         if r_episodes:
             self.scores_episodes = []
-            self.scores_recent = deque(maxlen=display_frequency)
 
     def _display_metrics(self, ep_number):
-        print("Episode: %d Average score: %f" % (ep_number, np.mean(self.scores_recent)))
+        print("Episode: %d Average score: %f" % (ep_number, np.mean(self.scores_recent[-100:-1])))
 
     def _update_metrics(self, step, state, actions, rewards, next_state, done, score):
         self.avg_scores.append(np.mean(rewards))
@@ -76,7 +79,6 @@ class MultiGymRunner(object):
             ep_score = np.sum(self.avg_scores)
             self.avg_scores = [] # reset episode scores
             self.scores_episodes.append(ep_score)
-            self.scores_recent.append(ep_score)
 
     def get_metrics(self):
         return self.scores_episodes
@@ -117,7 +119,7 @@ class MultiGymRunner(object):
 
     def run(self, n_episodes, train=False, render=False, verbose=False, display_frequency=1000):
         total_steps = 0
-        self._reset_metrics(r_episodes = True, display_frequency=display_frequency)
+        self._reset_metrics(r_episodes=True, display_frequency=display_frequency)
         for e in range(n_episodes):
             step = 0
             score = np.zeros(self.n_agents, dtype=np.float64)
@@ -136,14 +138,13 @@ class MultiGymRunner(object):
                 if train:
                     self._store_transitions(state, actions, rewards, next_state, done)
                 state = next_state
+                if train and total_steps >= self.replay_start_size:
+                    self._train_agents()
             total_steps += step
             if verbose and (e+1)%display_frequency == 0:
                 self._display_metrics(e)
-            if train:
-                if self._stop_condition(e):
-                    break
-                elif total_steps >= self.replay_start_size:
-                    self._train_agents()
+            if train and self._stop_condition(e):
+                break
             if self.save_filename is not None and train and (e+1) % self.save_frequency == 0:
                 self._save_agents(self.save_filename)
         if self.save_filename is not None and train:

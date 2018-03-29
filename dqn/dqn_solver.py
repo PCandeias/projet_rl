@@ -5,14 +5,13 @@ import keras
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.models import load_model
-from keras.models import clone_model
 import utility
 
 
 
 class DqnSolver(object):
     def __init__(self, observation_size, action_size, gamma=0.97, eps=1.0, eps_decay=0.9995, eps_min=0.1, alpha=0.01,
-                 alpha_decay=0.01, memory_size=100000, batch_size=64, freeze_frequency=500, verbose=False, load_filename=None):
+                 alpha_decay=0.01, memory_size=100000, batch_size=64, freeze_target_frequency=500, verbose=False, load_filename=None):
         self.memory = deque(maxlen=memory_size)
         self.observation_size = observation_size
         self.action_size = action_size
@@ -22,7 +21,7 @@ class DqnSolver(object):
         self.eps_min = eps_min
         self.batch_size = batch_size
         self.verbose = verbose
-        self.freeze_frequency = freeze_frequency # number of replay calls between each target Q-network
+        self.freeze_target_frequency = freeze_target_frequency # number of replay calls between each target Q-network
         self.replay_count = 0  # keep track of number of replay calls
         # If trying to load a model from file and file found, load it
         if load_filename is not None and utility.file_exists(utility.models_directory + load_filename + "_dqn.h5"):
@@ -34,18 +33,18 @@ class DqnSolver(object):
     def load_model(self, load_filename):
         print("Loading existing model...")
         self.model = load_model(utility.models_directory + load_filename + "_dqn.h5")
-        self.target_model = clone_model(self.model)
+        self.target_model = utility.copy_model(self.model)
 
     def save_model(self, save_filename):
         self.model.save(utility.models_directory + save_filename + "_dqn.h5")
 
     def build_model(self, alpha, alpha_decay):
         self.model = Sequential()
-        self.model.add(Dense(units=64, activation='tanh', input_dim=self.observation_size))
-        self.model.add(Dense(units=64, activation='tanh'))
+        self.model.add(Dense(units=200, activation='tanh', input_dim=self.observation_size))
+        self.model.add(Dense(units=200, activation='tanh'))
         self.model.add(Dense(units=self.action_size, activation='linear'))
         self.model.compile(loss='mse', optimizer=keras.optimizers.Adam(lr=alpha, decay=alpha_decay))
-        self.target_model = self.model # avoid using target Q-network for first iterations
+        self.target_model = utility.copy_model(self.model) # avoid using target Q-network for first iterations
 
     def store(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
@@ -60,6 +59,9 @@ class DqnSolver(object):
             eps = self.eps
         return np.random.randint(0, self.action_size) if eps >= np.random.rand() else np.argmax(self.model.predict(state))
 
+    def freeze_target(self):
+        self.target_model = utility.copy_model(self.model)
+
     # Train the agent in a given mini_batch of previous (state,action,reward,next_state)
     def replay(self):
         self.replay_count += 1
@@ -67,15 +69,14 @@ class DqnSolver(object):
         x_batch, y_batch = [], []
         mini_batch = random.sample(self.memory, batch_size)
         for state, action, reward, next_state, done in mini_batch:
-            y_train = self.target_model.predict(state)
+            y_train = self.model.predict(state)
             y_train[0][action] = reward if done else reward + self.gamma * np.max(self.target_model.predict(next_state))
             x_batch.append(state[0])
             y_batch.append(y_train[0])
         self.model.fit(np.array(x_batch), np.array(y_batch), batch_size=batch_size, verbose=self.verbose)
         self.eps = max(self.eps * self.eps_decay, self.eps_min) # update eps
-        # Freeze a new target Q-network
-        if self.replay_count % self.freeze_frequency == 0:
-            self.target_model = clone_model(self.model)
+        if self.replay_count % self.freeze_target_frequency == 0:
+            self.freeze_target()
 
 
 

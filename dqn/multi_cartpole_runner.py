@@ -1,7 +1,8 @@
 from multi_gym_runner import MultiGymRunner
 import numpy as np
 import gym
-from collections import deque
+import tensorflow as tf
+from keras.backend import tensorflow_backend as K
 
 class MultiCartpoleRunner(MultiGymRunner):
     def _create_environment(self):
@@ -22,9 +23,14 @@ class MultiCartpoleRunner(MultiGymRunner):
     def _stop_condition(self, episode_number):
         return episode_number >= 100 and np.mean(self.scores_recent) >= 495
 
-#runner = MultiCartpoleRunner(1, agent_mode='pg', load_filename='cartpole', save_filename='cartpole')
-#runner = MultiCartpoleRunner(1, agent_mode='dqn')
-runner = MultiCartpoleRunner(1, agent_mode='ac',  save_filename='cartpole', load_filename='cartpole',
-        save_frequency=1000)
-runner.run(n_episodes=200000, train=True, verbose=True, display_frequency=1000)
-runner.run(n_episodes=100, train=False)
+
+with tf.Session(config=tf.ConfigProto(
+                    intra_op_parallelism_threads=16)) as sess:
+    K.set_session(sess)
+
+    runner = MultiCartpoleRunner(n_agents=1, agent_mode='ac', save_filename = 'cartpole', load_filename='cartpole',
+                                 save_frequency = 1000, replay_start_size=100, gamma=0.99, eps=1.0, eps_decay=0.995,
+                                 eps_min=0.05, alpha=5e-4, alpha_decay=0.0001, memory_size=1000000, batch_size=32,
+                                 freeze_target_frequency=1000, verbose=False)
+    runner.run(n_episodes=1000, train=True, verbose=True, display_frequency=10)
+    runner.run(n_episodes=100, train=False)
