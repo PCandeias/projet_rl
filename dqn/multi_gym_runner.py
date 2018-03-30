@@ -9,7 +9,7 @@ import time
 
 class MultiGymRunner(object):
     def __init__(self, n_agents=1, agent_mode='dqn', save_filename = None, load_filename=None, save_frequency = 20000, replay_start_size=10000,
-                 gamma=0.99, eps=1.0, eps_decay=0.995, eps_min=0.05, alpha=0.01, alpha_decay=0.01, memory_size=1000000, batch_size=64,
+                 gamma=0.99, eps=1.0, eps_decay=0.995, eps_min=0.05, alpha=0.01, memory_size=1000000, batch_size=64,
                  freeze_target_frequency=500, verbose=False):
         self.n_agents = n_agents
         self.agent_mode = agent_mode
@@ -18,7 +18,7 @@ class MultiGymRunner(object):
         self.save_filename = save_filename
         self.save_frequency = save_frequency
         self.replay_start_size = replay_start_size
-        self._create_agents(load_filename=load_filename, gamma=gamma, alpha=alpha, alpha_decay=alpha_decay, eps=eps, eps_decay=eps_decay,
+        self._create_agents(load_filename=load_filename, gamma=gamma, alpha=alpha, eps=eps, eps_decay=eps_decay,
                             eps_min=eps_min,memory_size=memory_size, batch_size=batch_size, freeze_target_frequency=freeze_target_frequency,
                             verbose=verbose)
 
@@ -31,23 +31,23 @@ class MultiGymRunner(object):
             self.agents[i].save_model(save_filename + str(i))
 
     def _create_agents(self, load_filename, gamma, eps, eps_decay, eps_min, alpha,
-                       alpha_decay, memory_size, batch_size, freeze_target_frequency, verbose):
+                       memory_size, batch_size, freeze_target_frequency, verbose):
         print("Creating agents...")
         print(alpha)
         self.agents = []
         for i in range(self.n_agents):
             if self.agent_mode == 'pg':
                 self.agents.append(PgSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
-                    gamma=gamma, alpha=alpha, alpha_decay=alpha_decay, memory_size=memory_size, batch_size=batch_size,
+                    gamma=gamma, alpha=alpha, memory_size=memory_size, batch_size=batch_size,
                     verbose=verbose, load_filename=load_filename + str(i) if load_filename else None))
             elif self.agent_mode == 'ac':
                 self.agents.append(AcSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
-                    gamma=gamma, alpha=alpha, alpha_decay=alpha_decay, memory_size=memory_size, batch_size=batch_size,
+                    gamma=gamma, alpha=alpha, memory_size=memory_size, batch_size=batch_size,
                     freeze_target_frequency=freeze_target_frequency, verbose=verbose, load_filename=load_filename + str(i) if load_filename else None))
             else:
                 self.agents.append(DqnSolver(action_size=self.get_action_size(), observation_size=self.get_observation_size(),
                                              gamma=gamma, eps=eps, eps_decay=eps_decay, eps_min=eps_min, alpha=alpha,
-                                             alpha_decay=alpha_decay, memory_size=memory_size, batch_size=batch_size,
+                                             memory_size=memory_size, batch_size=batch_size,
                                              freeze_target_frequency=freeze_target_frequency,
                                              verbose=verbose, load_filename=load_filename + str(i) if load_filename else None))
         print("Done creating agents.")
@@ -71,7 +71,7 @@ class MultiGymRunner(object):
             self.scores_episodes = []
 
     def _display_metrics(self, ep_number):
-        print("Episode: %d Average score: %f" % (ep_number, np.mean(self.scores_recent[-100:-1])))
+        print("Episode: %d Average score: %f" % (ep_number, np.mean(self.scores_episodes[-100:-1])))
 
     def _update_metrics(self, step, state, actions, rewards, next_state, done, score):
         self.avg_scores.append(np.mean(rewards))
@@ -142,7 +142,7 @@ class MultiGymRunner(object):
                     self._train_agents()
             total_steps += step
             if verbose and (e+1)%display_frequency == 0:
-                self._display_metrics(e)
+                self._display_metrics(ep_number=e)
             if train and self._stop_condition(e):
                 break
             if self.save_filename is not None and train and (e+1) % self.save_frequency == 0:

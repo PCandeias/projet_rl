@@ -21,16 +21,16 @@ class MultiCartpoleRunner(MultiGymRunner):
         return actions[0]
 
     def _stop_condition(self, episode_number):
-        return episode_number >= 100 and np.mean(self.scores_recent) >= 495
+        return episode_number >= 100 and np.mean(self.scores_episodes[-100:-1]) >= 495
 
 
 with tf.Session(config=tf.ConfigProto(
                     intra_op_parallelism_threads=16)) as sess:
     K.set_session(sess)
 
-    runner = MultiCartpoleRunner(n_agents=1, agent_mode='ac', save_filename = 'cartpole', load_filename='cartpole',
-                                 save_frequency = 1000, replay_start_size=100, gamma=0.99, eps=1.0, eps_decay=0.995,
-                                 eps_min=0.05, alpha=5e-4, alpha_decay=0.0001, memory_size=1000000, batch_size=32,
+    runner = MultiCartpoleRunner(n_agents=1, agent_mode='pg', save_filename = 'cartpole', load_filename='cartpole',
+                                 save_frequency=1000, replay_start_size=1000, gamma=0.99, eps=1.0, eps_decay=0.995,
+                                 eps_min=0.05, alpha=5e-4, memory_size=1000000, batch_size=32,
                                  freeze_target_frequency=1000, verbose=False)
     runner.run(n_episodes=1000, train=True, verbose=True, display_frequency=10)
     runner.run(n_episodes=100, train=False)

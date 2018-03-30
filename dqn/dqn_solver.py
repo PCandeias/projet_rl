@@ -11,7 +11,7 @@ import utility
 
 class DqnSolver(object):
     def __init__(self, observation_size, action_size, gamma=0.97, eps=1.0, eps_decay=0.9995, eps_min=0.1, alpha=0.01,
-                 alpha_decay=0.01, memory_size=100000, batch_size=64, freeze_target_frequency=500, verbose=False, load_filename=None):
+                 memory_size=100000, batch_size=64, freeze_target_frequency=500, verbose=False, load_filename=None):
         self.memory = deque(maxlen=memory_size)
         self.observation_size = observation_size
         self.action_size = action_size
@@ -28,7 +28,7 @@ class DqnSolver(object):
             self.load_model(load_filename)
             self.eps = eps_min # If using already partially trained agent, start from eps_min
         else:
-            self.build_model(alpha, alpha_decay)
+            self.build_model(alpha)
 
     def load_model(self, load_filename):
         print("Loading existing model...")
@@ -38,12 +38,12 @@ class DqnSolver(object):
     def save_model(self, save_filename):
         self.model.save(utility.models_directory + save_filename + "_dqn.h5")
 
-    def build_model(self, alpha, alpha_decay):
+    def build_model(self, alpha):
         self.model = Sequential()
         self.model.add(Dense(units=200, activation='tanh', input_dim=self.observation_size))
         self.model.add(Dense(units=200, activation='tanh'))
         self.model.add(Dense(units=self.action_size, activation='linear'))
-        self.model.compile(loss='mse', optimizer=keras.optimizers.Adam(lr=alpha, decay=alpha_decay))
+        self.model.compile(loss='mse', optimizer=keras.optimizers.Adam(lr=alpha))
         self.target_model = utility.copy_model(self.model) # avoid using target Q-network for first iterations
 
     def store(self, state, action, reward, next_state, done):
@@ -59,8 +59,6 @@ class DqnSolver(object):
             eps = self.eps
         return np.random.randint(0, self.action_size) if eps >= np.random.rand() else np.argmax(self.model.predict(state))
 
-    def freeze_target(self):
-        self.target_model = utility.copy_model(self.model)
 
     # Train the agent in a given mini_batch of previous (state,action,reward,next_state)
     def replay(self):
@@ -76,7 +74,8 @@ class DqnSolver(object):
         self.model.fit(np.array(x_batch), np.array(y_batch), batch_size=batch_size, verbose=self.verbose)
         self.eps = max(self.eps * self.eps_decay, self.eps_min) # update eps
         if self.replay_count % self.freeze_target_frequency == 0:
-            self.freeze_target()
+            print('FREEZING')
+            self.target_model = utility.copy_model(self.model)
 
 
 
