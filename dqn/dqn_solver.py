@@ -74,7 +74,6 @@ class DqnSolver(object):
         self.model.fit(np.array(x_batch), np.array(y_batch), batch_size=batch_size, verbose=self.verbose)
         self.eps = max(self.eps * self.eps_decay, self.eps_min) # update eps
         if self.replay_count % self.freeze_target_frequency == 0:
-            print('FREEZING')
             self.target_model = utility.copy_model(self.model)
 
 
