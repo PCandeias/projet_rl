@@ -2,6 +2,8 @@ from multi_gym_runner import MultiGymRunner
 import numpy as np
 import gym
 from collections import deque
+import tensorflow as tf
+from keras.backend import tensorflow_backend as K
 
 class MultiLunarLanderRunner(MultiGymRunner):
     def _create_environment(self):
@@ -17,9 +19,15 @@ class MultiLunarLanderRunner(MultiGymRunner):
         return [reward]
 
     def _process_actions(self, actions):
-        return actions[0] 
+        return actions[0]
 
-# runner = MultiLunarLanderRunner(1, agent_mode='dqn', save_filename='dqn_lunarlander.h5', load_filename='dqn_lunarlander.h5', save_frequency=10000)
-runner = MultiLunarLanderRunner(1, agent_mode='dqn',  save_filename='lunar_lander', save_frequency=10000)
-runner.run(n_episodes=10000000, train=True, verbose=True)
-runner.run(n_episodes=100, train=False)
+with tf.Session(config=tf.ConfigProto(
+        intra_op_parallelism_threads=16)) as sess:
+    K.set_session(sess)
+
+    runner = MultiLunarLanderRunner(n_agents=1, agent_mode='dqn', save_filename = 'lunarlander', load_filename='lunarlander',
+                                 save_frequency=250, replay_start_size=1000, gamma=1.0, eps=1.0, eps_decay=0.995,
+                                 eps_min=0.05, alpha=5e-4, memory_size=50000, batch_size=32,
+                                 freeze_target_frequency=1000, verbose=False)
+    runner.run(n_episodes=100000, train=True, verbose=True, display_frequency=10)
+    runner.run(n_episodes=100, train=False)
