@@ -1,19 +1,30 @@
 import numpy as np
-from collections import deque
-import random
 import keras
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.models import load_model
-from random_buffer import RandomBuffer
+from replay_buffer import ReplayBuffer
 import utility
 import time
 
 
 class DqnSolver(object):
-    def __init__(self, observation_size, action_size, gamma=0.97, eps=1.0, eps_decay=0.9995, eps_min=0.1, alpha=0.01,
-                 memory_size=100000, batch_size=64, freeze_target_frequency=500, verbose=False, load_filename=None):
-        self.memory = RandomBuffer(max_len=memory_size)
+    def __init__(self,
+                 observation_size,
+                 action_size,
+                 gamma=0.97,
+                 eps=1.0,
+                 eps_decay=0.9995,
+                 eps_min=0.1,
+                 alpha=0.01,
+                 memory_size=100000,
+                 batch_size=64,
+                 double_q=False,
+                 freeze_target_frequency=500,
+                 verbose=False,
+                 load_filename=None
+                 ):
+        self.memory = ReplayBuffer(max_len=memory_size)
         self.observation_size = observation_size
         self.action_size = action_size
         self.gamma = gamma
@@ -21,9 +32,11 @@ class DqnSolver(object):
         self.eps_decay = eps_decay
         self.eps_min = eps_min
         self.batch_size = batch_size
+        self.double_q = double_q
         self.verbose = verbose
         self.freeze_target_frequency = freeze_target_frequency # number of replay calls between each target Q-network
         self.replay_count = 0  # keep track of number of replay calls
+        print("Alpha",alpha)
         # If trying to load a model from file and file found, load it
         if load_filename is not None and utility.file_exists(utility.models_directory + load_filename + "_dqn.h5"):
             self.load_model(load_filename)
@@ -43,7 +56,7 @@ class DqnSolver(object):
         self.model = Sequential()
         self.model.add(Dense(units=200, activation='tanh', input_dim=self.observation_size))
         self.model.add(Dense(units=200, activation='tanh'))
-        self.model.add(Dense(units=self.action_size, activation='linear'))
+        self.model.add(Dense(units=self.action_size))
         self.model.compile(loss='mse', optimizer=keras.optimizers.Adam(lr=alpha))
         self.target_model = utility.copy_model(self.model) # avoid using target Q-network for first iterations
 
@@ -69,20 +82,19 @@ class DqnSolver(object):
         mini_batch = self.memory.sample(batch_size)
 
         for state, action, reward, next_state, done in mini_batch:
-            y_train = self.model.predict(state)
+            y_train = self.model.predict(state)[0]
             model_pred_next = self.model.predict(next_state)[0]
-            target_pred_next = self.target_model.predict(next_state)[0]
-            # Trying to evaluate Q-value for the given policy, so need to use np.argmax(model_pred_next), not just
-            # np.max(target_pred_next)
-            y_train[0][action] = reward if done else reward + self.gamma * target_pred_next[np.argmax(model_pred_next)]
-            #y_train[0][action] = reward if done else reward + self.gamma * np.max(model_pred_next)
+            if False: # use fixed target Q-network
+                target_pred_next = self.target_model.predict(next_state)[0]
+                y_train[action] = (reward if done else (reward + self.gamma * np.max(target_pred_next)))
+            else:
+                y_train[action] = reward if done else reward + self.gamma * np.max(model_pred_next)
             x_batch.append(state[0])
-            y_batch.append(y_train[0])
+            y_batch.append(y_train)
         self.model.fit(np.array(x_batch), np.array(y_batch), batch_size=batch_size, verbose=self.verbose)
         self.eps = max(self.eps * self.eps_decay, self.eps_min) # update eps
         if self.replay_count % self.freeze_target_frequency == 0:
-            print("FREEZING")
-            self.target_model = utility.copy_model(self.model)
+            self.target_model.set_weights(self.model.get_weights())
 
 
 
