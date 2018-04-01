@@ -17,4 +17,5 @@ class RandomBuffer(object):
         if self.max_len is None or self.max_len >= len(self.memory):
             self.memory.append(element)
         else:
-            self.memory[random.randint(0, self.max_len-1)] = element
+            pos = random.randint(0, self.max_len-1)
+            self.memory[pos] = element

@@ -26,7 +26,7 @@ with tf.Session(config=tf.ConfigProto(
     K.set_session(sess)
 
     runner = MultiLunarLanderRunner(n_agents=1, agent_mode='dqn', save_filename = 'lunarlander', load_filename='lunarlander',
-                                 save_frequency=250, replay_start_size=1000, gamma=1.0, eps=1.0, eps_decay=0.995,
+                                 save_frequency=250, replay_start_size=1000, gamma=1.0, eps=1.0, eps_decay=0.9995,
                                  eps_min=0.05, alpha=5e-4, memory_size=50000, batch_size=32,
                                  freeze_target_frequency=1000, verbose=False)
     runner.run(n_episodes=100000, train=True, verbose=True, display_frequency=10)

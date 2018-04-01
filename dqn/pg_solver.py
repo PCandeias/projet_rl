@@ -11,7 +11,7 @@ import utility
 class PgSolver(object):
     def __init__(self, observation_size, action_size, gamma=0.97, alpha=0.01, eps=0.01,
                  alpha_decay=0.01, memory_size=10000, batch_size=64, verbose=False, save_filename=None, load_filename=None):
-        print("EPS", eps)
+        print("EPS", )
         self.memory = deque(maxlen=memory_size)
         self.ep_step = []
         self.observation_size = observation_size

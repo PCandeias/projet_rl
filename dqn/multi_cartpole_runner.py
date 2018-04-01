@@ -29,8 +29,8 @@ with tf.Session(config=tf.ConfigProto(
     K.set_session(sess)
 
     runner = MultiCartpoleRunner(n_agents=1, agent_mode='dqn', save_filename = 'cartpole', load_filename='cartpole',
-                                 save_frequency=500, replay_start_size=1000, gamma=1.0, eps=1.0, eps_decay=0.995,
-                                 eps_min=0.05, alpha=5e-3, memory_size=100000, batch_size=32,
-                                 freeze_target_frequency=1000, verbose=False)
-    runner.run(n_episodes=100000, train=True, verbose=True, display_frequency=10)
+                                 save_frequency=500, replay_start_size=10000, gamma=1.0, eps=1.0, eps_decay=0.995,
+                                 eps_min=0.05, alpha=0.00025, memory_size=1000000, batch_size=32,
+                                 freeze_target_frequency=1000, double_q=False, verbose=False)
+    runner.run(n_episodes=100000, train=True, verbose=True, display_frequency=20)
     runner.run(n_episodes=100, train=False)
