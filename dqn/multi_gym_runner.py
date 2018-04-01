@@ -1,10 +1,7 @@
 import numpy as np
-import gym
-from collections import deque
 from dqn_solver import DqnSolver
 from pg_solver import PgSolver
 from ac_solver import AcSolver
-import time
 
 
 class MultiGymRunner(object):

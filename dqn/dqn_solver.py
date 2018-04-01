@@ -36,7 +36,6 @@ class DqnSolver(object):
         self.verbose = verbose
         self.freeze_target_frequency = freeze_target_frequency # number of replay calls between each target Q-network
         self.replay_count = 0  # keep track of number of replay calls
-        print("Alpha",alpha)
         # If trying to load a model from file and file found, load it
         if load_filename is not None and utility.file_exists(utility.models_directory + load_filename + "_dqn.h5"):
             self.load_model(load_filename)
@@ -84,10 +83,10 @@ class DqnSolver(object):
         y_batch = self.model.predict(np.array(states, copy=False))
         model_pred_after = self.model.predict(np.array(next_states, copy=False))
         target_pred_after = self.target_model.predict(np.array(next_states, copy=False))
-        if True:
-            y_batch[np.arange(batch_size),actions] = np.array(rewards, copy=False) + np.logical_not(np.array(done, copy=False)) * np.max(target_pred_after, axis=1)
+        if self.double_q:
+            y_batch[np.arange(batch_size),actions] = np.array(rewards, copy=False) + self.gamma * np.logical_not(np.array(done, copy=False)) * target_pred_after[np.arange(batch_size),np.argmax(model_pred_after, axis=1)]
         else:
-            y_batch[np.arange(batch_size),actions] = np.array(rewards, copy=False) + np.logical_not(np.array(done, copy=False)) * np.max(model_pred_after, axis=1)
+            y_batch[np.arange(batch_size),actions] = np.array(rewards, copy=False) + self.gamma * np.logical_not(np.array(done, copy=False)) * np.max(target_pred_after, axis=1)
 
         self.model.fit(np.array(states), np.array(y_batch), batch_size=batch_size, verbose=self.verbose)
         self.eps = max(self.eps * self.eps_decay, self.eps_min) # update eps
