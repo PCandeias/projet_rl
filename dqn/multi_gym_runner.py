@@ -71,7 +71,7 @@ class MultiGymRunner(object):
             self.scores_episodes = []
 
     def _display_metrics(self, ep_number):
-        print("Episode: %d Average score: %f" % (ep_number, np.mean(self.scores_episodes[-20:-1])))
+        print("Episode: %d Average score: %f" % (ep_number, np.mean(self.scores_episodes[-100:-1])))
 
     def _update_metrics(self, step, state, actions, rewards, next_state, done, score):
         self.avg_scores.append(np.mean(rewards))

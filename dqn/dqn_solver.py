@@ -84,7 +84,7 @@ class DqnSolver(object):
         for state, action, reward, next_state, done in mini_batch:
             y_train = self.model.predict(state)[0]
             model_pred_next = self.model.predict(next_state)[0]
-            if False: # use fixed target Q-network
+            if True: # use fixed target Q-network
                 target_pred_next = self.target_model.predict(next_state)[0]
                 y_train[action] = (reward if done else (reward + self.gamma * np.max(target_pred_next)))
             else:
@@ -94,6 +94,7 @@ class DqnSolver(object):
         self.model.fit(np.array(x_batch), np.array(y_batch), batch_size=batch_size, verbose=self.verbose)
         self.eps = max(self.eps * self.eps_decay, self.eps_min) # update eps
         if self.replay_count % self.freeze_target_frequency == 0:
+            print("FREEZING")
             self.target_model.set_weights(self.model.get_weights())
 
 
