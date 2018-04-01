@@ -78,23 +78,20 @@ class DqnSolver(object):
     def replay(self):
         self.replay_count += 1
         batch_size = min(self.batch_size, len(self.memory))
-        x_batch, y_batch = [], []
         mini_batch = self.memory.sample(batch_size)
 
-        for state, action, reward, next_state, done in mini_batch:
-            y_train = self.model.predict(state)[0]
-            model_pred_next = self.model.predict(next_state)[0]
-            if True: # use fixed target Q-network
-                target_pred_next = self.target_model.predict(next_state)[0]
-                y_train[action] = (reward if done else (reward + self.gamma * np.max(target_pred_next)))
-            else:
-                y_train[action] = reward if done else reward + self.gamma * np.max(model_pred_next)
-            x_batch.append(state[0])
-            y_batch.append(y_train)
-        self.model.fit(np.array(x_batch), np.array(y_batch), batch_size=batch_size, verbose=self.verbose)
+        states, actions, rewards, next_states, done = zip(*mini_batch)
+        y_batch = self.model.predict(np.array(states, copy=False))
+        model_pred_after = self.model.predict(np.array(next_states, copy=False))
+        target_pred_after = self.target_model.predict(np.array(next_states, copy=False))
+        if True:
+            y_batch[np.arange(batch_size),actions] = np.array(rewards, copy=False) + np.logical_not(np.array(done, copy=False)) * np.max(target_pred_after, axis=1)
+        else:
+            y_batch[np.arange(batch_size),actions] = np.array(rewards, copy=False) + np.logical_not(np.array(done, copy=False)) * np.max(model_pred_after, axis=1)
+
+        self.model.fit(np.array(states), np.array(y_batch), batch_size=batch_size, verbose=self.verbose)
         self.eps = max(self.eps * self.eps_decay, self.eps_min) # update eps
         if self.replay_count % self.freeze_target_frequency == 0:
-            print("FREEZING")
             self.target_model.set_weights(self.model.get_weights())
 
 

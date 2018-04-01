@@ -136,7 +136,7 @@ class MultiGymRunner(object):
                 score += rewards
                 self._update_metrics(step, state, actions, rewards, next_state, done, score)
                 if train:
-                    self._store_transitions(state, actions, rewards, next_state, done)
+                    self._store_transitions(state[0], actions, rewards, next_state[0], done)
                 state = next_state
                 if train and total_steps >= self.replay_start_size:
                     self._train_agents()
