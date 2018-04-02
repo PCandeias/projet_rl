@@ -37,7 +37,8 @@ class MultiCartpoleRunner(MultiGymRunner):
         return self.scores_episodes
 
     def _process_actions(self, actions):
-        return actions[0] 
+        return actions[0]
+
 
 runner = MultiCartpoleRunner(1, agent_mode='dqn', save_filename='mountaincar')
 runner.run(n_episodes=1000000, train=True, verbose=True)

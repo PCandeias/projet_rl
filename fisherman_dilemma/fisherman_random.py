@@ -26,43 +26,44 @@ class RandomFishermanEnv(gym.Env):
         self.cur_stock = self.initial_stock
         self.population = population
         self.n_agents = n_agents
-        self.growth_rate = growth_rate 
+        self.n_non_agents = population - n_agents
+        self.growth_rate = growth_rate
         self.base_pr_fish = 1.0 / self.growth_rate
         self.max_steps = max_steps 
 
     def step(self, actions):
         if self.done:
-            return np.array(self.cur_stock), rewards, self.done, {consumed}
+            return np.array(self.cur_stock), np.zeros(self.n_agents), self.done, {0}
         self.cur_step += 1
-        actions_population = np.random.rand(self.population)
-        agents_spots = random.sample(range(self.population), self.n_agents)
-        rewards = np.zeros(self.n_agents, dtype=np.float64)
-        pr_fish = max(0, (self.cur_stock - 
-            min(self.max_stock * self.base_pr_fish, self.population / float(self.growth_rate -1))) / self.population)
-        starting_stock = self.cur_stock
-        for i in range(self.population):
-            if self.cur_stock <= 0:
-                self.done = True
-                break
-            if i in agents_spots:
-                player_i = agents_spots.index(i)
-                if actions[player_i] == 1:
-                    rewards[player_i] = 1
-                    self.cur_stock -= 1
-            else:
-                if np.random.rand() < pr_fish:
-                    self.cur_stock -= 1
-        consumed = starting_stock-self.cur_stock
-        self.cur_stock = min(self.max_stock, self.cur_stock * self.growth_rate)
-        if self.cur_step >= self.max_steps:
-            self.done = True
+        pr_fish = min(1,max(0, (self.cur_stock -
+            min(self.max_stock * self.base_pr_fish, self.population / float(self.growth_rate -1))) / self.population))
+        players_want = np.sum(actions)
+        pop_want = np.random.binomial(self.n_non_agents, pr_fish)
+        total_want = players_want + pop_want
+        if self.cur_stock >= total_want:
+            self.cur_stock = min((self.cur_stock - total_want) * 2, self.max_stock)
+            rewards = np.array(actions)
+            consumed = total_want
+        else:
+            chosen_rewards = np.zeros(total_want)
+            chosen_rewards[0:self.cur_stock] = 1
+            np.random.shuffle(chosen_rewards)
+            consumed = self.cur_stock
+            self.cur_stock = 0
+            rewards = np.zeros(self.n_agents)
+            cur = 0
+            for i in range(self.n_agents):
+                if actions[i] == 1:
+                    rewards[i] = chosen_rewards[cur]
+                    cur += 1
+        self.done = self.cur_stock == 0 or self.cur_step >= self.max_steps
         return np.array(self.cur_stock), rewards, self.done, {consumed}
 
     def reset(self):
         self.cur_stock = self.initial_stock
         self.cur_step = 0
         self.done = False
-        return np.array(self.cur_stock, dtype=np.float64)
+        return np.array(self.cur_stock)
 
     def render(self):
         print("Current stock: %d" % (self.cur_stock))

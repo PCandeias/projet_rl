@@ -9,21 +9,9 @@ import time
 
 
 class DqnSolver(object):
-    def __init__(self,
-                 observation_size,
-                 action_size,
-                 gamma=0.97,
-                 eps=1.0,
-                 eps_decay=0.9995,
-                 eps_min=0.1,
-                 alpha=0.01,
-                 memory_size=100000,
-                 batch_size=64,
-                 double_q=False,
-                 freeze_target_frequency=500,
-                 verbose=False,
-                 load_filename=None
-                 ):
+    def __init__(self, observation_size, action_size, gamma=0.97, eps=1.0, eps_decay=0.9995, eps_min=0.1, alpha=0.01,
+                 memory_size=100000, batch_size=64, double_q=False, freeze_target_frequency=500, verbose=False,
+                 load_filename=None):
         self.memory = ReplayBuffer(max_len=memory_size)
         self.observation_size = observation_size
         self.action_size = action_size
@@ -77,17 +65,17 @@ class DqnSolver(object):
     def replay(self):
         self.replay_count += 1
         batch_size = min(self.batch_size, len(self.memory))
+        # Get a batch of state-transitions
         mini_batch = self.memory.sample(batch_size)
-
         states, actions, rewards, next_states, done = zip(*mini_batch)
         y_batch = self.model.predict(np.array(states, copy=False))
         model_pred_after = self.model.predict(np.array(next_states, copy=False))
         target_pred_after = self.target_model.predict(np.array(next_states, copy=False))
         if self.double_q:
-            y_batch[np.arange(batch_size),actions] = np.array(rewards, copy=False) + self.gamma * np.logical_not(np.array(done, copy=False)) * target_pred_after[np.arange(batch_size),np.argmax(model_pred_after, axis=1)]
+            y_batch[np.arange(batch_size),actions] = np.array(rewards, copy=False) + self.gamma * np.invert(np.array(done, copy=False)) * target_pred_after[np.arange(batch_size),np.argmax(model_pred_after, axis=1)]
         else:
-            y_batch[np.arange(batch_size),actions] = np.array(rewards, copy=False) + self.gamma * np.logical_not(np.array(done, copy=False)) * np.max(target_pred_after, axis=1)
-
+            y_batch[np.arange(batch_size),actions] = np.array(rewards, copy=False) + self.gamma * np.invert(np.array(done, copy=False)) * np.max(target_pred_after, axis=1)
+        # Train the model
         self.model.fit(np.array(states), np.array(y_batch), batch_size=batch_size, verbose=self.verbose)
         self.eps = max(self.eps * self.eps_decay, self.eps_min) # update eps
         if self.replay_count % self.freeze_target_frequency == 0:

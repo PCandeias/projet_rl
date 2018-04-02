@@ -7,7 +7,7 @@ from ac_solver import AcSolver
 class MultiGymRunner(object):
     def __init__(self, n_agents=1, agent_mode='dqn', save_filename = None, load_filename=None, save_frequency = 20000, replay_start_size=10000,
                  gamma=0.99, eps=1.0, eps_decay=0.995, eps_min=0.05, alpha=0.01, memory_size=1000000, batch_size=64,
-                 double_q=False, freeze_target_frequency=500, verbose=False):
+                 update_frequency=1, double_q=False, freeze_target_frequency=500, verbose=False):
         self.n_agents = n_agents
         self.agent_mode = agent_mode
         self._create_environment()
@@ -15,6 +15,7 @@ class MultiGymRunner(object):
         self.save_filename = save_filename
         self.save_frequency = save_frequency
         self.replay_start_size = replay_start_size
+        self.update_frequency = update_frequency
         self._create_agents(load_filename=load_filename, gamma=gamma, alpha=alpha, eps=eps, eps_decay=eps_decay,
                             eps_min=eps_min,memory_size=memory_size, batch_size=batch_size, double_q=double_q,
                             freeze_target_frequency=freeze_target_frequency, verbose=verbose)
@@ -30,7 +31,6 @@ class MultiGymRunner(object):
     def _create_agents(self, load_filename, gamma, eps, eps_decay, eps_min, alpha,
                        memory_size, batch_size, double_q, freeze_target_frequency, verbose):
         print("Creating agents...")
-        print(alpha)
         self.agents = []
         for i in range(self.n_agents):
             if self.agent_mode == 'pg':
@@ -57,24 +57,28 @@ class MultiGymRunner(object):
         return np.reshape(state, [1, self.get_observation_size()])
 
     def get_action_size(self):
-        raise NotImplementedError
+        return self.env.action_space.n
 
     def get_observation_size(self):
-        raise NotImplementedError
+        return self.env.observation_space.n
 
     def _reset_metrics(self, display_frequency, r_episodes=False):
         self.avg_scores = []
         if r_episodes:
             self.scores_episodes = []
+            self.best = -10000000
 
     def _display_metrics(self, ep_number):
         print("Episode: %d Average score: %f" % (ep_number, np.mean(self.scores_episodes[-100:-1])))
 
-    def _update_metrics(self, step, state, actions, rewards, next_state, done, score):
+    def _update_metrics(self, step, state, actions, rewards, next_state, done, score, ep_number):
         self.avg_scores.append(np.mean(rewards))
         if done:
             ep_score = np.sum(self.avg_scores)
             self.avg_scores = [] # reset episode scores
+            if ep_score > self.best:
+                self.best = ep_score
+                self.best_ep = ep_number
             self.scores_episodes.append(ep_score)
 
     def get_metrics(self):
@@ -108,6 +112,8 @@ class MultiGymRunner(object):
     def _stop_condition(self, episode_number):
         return False
 
+    def _save_condition(self, episode_number):
+        return False
     """
     Do any post processing on the action array required by the environment
     """
@@ -130,20 +136,26 @@ class MultiGymRunner(object):
                 next_state = self._preprocess_state(next_state)
                 rewards = self._preprocess_reward(rewards)
                 step += 1
+                total_steps += 1
                 score += rewards
-                self._update_metrics(step, state, actions, rewards, next_state, done, score)
+                self._update_metrics(step, state, actions, rewards, next_state, done, score, e)
                 if train:
                     self._store_transitions(state[0], actions, rewards, next_state[0], done)
                 state = next_state
-                if train and total_steps >= self.replay_start_size:
+                if train and total_steps % self.update_frequency == 0 and total_steps >= self.replay_start_size:
                     self._train_agents()
-            total_steps += step
             if verbose and (e+1)%display_frequency == 0:
                 self._display_metrics(ep_number=e)
             if train and self._stop_condition(e):
                 break
-            if self.save_filename is not None and train and (e+1) % self.save_frequency == 0:
-                self._save_agents(self.save_filename)
+            if self.save_filename is not None and train:
+                if (e+1) % self.save_frequency == 0:
+                    self._save_agents(self.save_filename)
+                    if self._save_condition(e):
+                        self._save_agents(self.save_filename + "_best")
+
+            if (e+1) % display_frequency == 0:
+                print(self.get_predictions([0,1,2]))
         if self.save_filename is not None and train:
             self._save_agents(self.save_filename)
         return self.get_metrics()

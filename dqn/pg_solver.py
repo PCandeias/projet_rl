@@ -9,14 +9,13 @@ from keras.models import load_model
 import utility
 
 class PgSolver(object):
-    def __init__(self, observation_size, action_size, gamma=0.97, alpha=0.01, eps=0.01,
+    def __init__(self, observation_size, action_size, gamma=0.97, alpha=0.01,
                  alpha_decay=0.01, memory_size=10000, batch_size=64, verbose=False, save_filename=None, load_filename=None):
         print("EPS", )
         self.memory = deque(maxlen=memory_size)
         self.ep_step = []
         self.observation_size = observation_size
         self.action_size = action_size
-        self.eps = eps
         self.gamma = gamma
         self.alpha = alpha
         self.alpha_decay = alpha_decay
@@ -58,13 +57,8 @@ class PgSolver(object):
 
     # select an action according using the probabilities given by the model
     def select_action(self, state, eps=None):
-        if eps is None:
-            eps = self.eps
-        if eps >= np.random.rand():
-            return np.random.randint(0, self.action_size)
-        else:
-            prob = self.model.predict(state)
-            return np.random.choice(self.action_size, p=prob[0])
+        prob = self.model.predict(state)
+        return np.random.choice(self.action_size, p=prob[0])
 
     # Train the agent in a given mini_batch of previous (state,action,reward,next_state)
     def replay(self):
@@ -77,7 +71,8 @@ class PgSolver(object):
             y_batch.append(action)
             weights.append(reward)
         weights = np.array(weights)
-        weights = (weights - np.mean(weights)) / np.std(weights) # normalize weights
+        weights = (weights - np.mean(weights)) / (np.std(weights) + utility.EPS) # normalize weights
+        weights[np.abs(weights) < utility.EPS] = utility.EPS
         self.model.fit(np.array(x_batch), np_utils.to_categorical(np.array(y_batch), self.action_size),
                 sample_weight=weights, batch_size=batch_size, verbose=self.verbose)
 
