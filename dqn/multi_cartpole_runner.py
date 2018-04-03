@@ -8,6 +8,12 @@ class MultiCartpoleRunner(MultiGymRunner):
     def _create_environment(self):
         self.env = gym.make('CartPole-v1')
 
+    def get_action_size(self):
+        return 2
+
+    def get_observation_size(self):
+        return 4
+
     def _preprocess_reward(self, reward):
         return [reward]
 
@@ -29,7 +35,7 @@ with tf.Session(config=tf.ConfigProto(
                     intra_op_parallelism_threads=16)) as sess:
     K.set_session(sess)
 
-    runner = MultiCartpoleRunner(n_agents=1, agent_mode='dqn', save_filename='cartpole', load_filename='cartpole',
+    runner = MultiCartpoleRunner(n_agents=1, agent_mode='pg', save_filename='cartpole', load_filename='cartpole',
                                  save_frequency=500, replay_start_size=1000, gamma=0.99, eps=1.0, eps_decay=0.9995,
                                  eps_min=0.02, alpha=0.00025, memory_size=50000, batch_size=32,
                                  freeze_target_frequency=10000, double_q=True, verbose=False)
