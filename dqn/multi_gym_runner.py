@@ -154,8 +154,6 @@ class MultiGymRunner(object):
                     if self._save_condition(e):
                         self._save_agents(self.save_filename + "_best")
 
-            if (e+1) % display_frequency == 0:
-                print(self.get_predictions([0,1,2]))
         if self.save_filename is not None and train:
             self._save_agents(self.save_filename)
         return self.get_metrics()

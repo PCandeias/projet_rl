@@ -67,7 +67,7 @@ class PgSolver(object):
         weights = []
         mini_batch = random.sample(self.memory, batch_size)
         for state, action, reward in mini_batch:
-            x_batch.append(state[0])
+            x_batch.append(state)
             y_batch.append(action)
             weights.append(reward)
         weights = np.array(weights)
