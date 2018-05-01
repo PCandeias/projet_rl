@@ -103,10 +103,10 @@ class MultiGymRunner(object):
         for i, agent in enumerate(self.agents):
             agent.store(state, actions[i], rewards[i], next_state, done)
 
-    def _select_actions(self, state):
+    def _select_actions(self, state, eps):
         actions = []
         for agent in self.agents:
-            actions.append(agent.select_action(state))
+            actions.append(agent.select_action(state, eps))
         return actions
 
     def _stop_condition(self, episode_number):
@@ -120,9 +120,10 @@ class MultiGymRunner(object):
     def _process_actions(self, actions):
         return actions
 
-    def run(self, n_episodes, train=False, render=False, verbose=False, display_frequency=1000):
+    def run(self, n_episodes, train=False, render=False, verbose=False, display_frequency=1000, eps=None):
         total_steps = 0
         self._reset_metrics(r_episodes=True, display_frequency=display_frequency)
+        r_eps = None if train else eps
         for e in range(n_episodes):
             step = 0
             score = np.zeros(self.n_agents, dtype=np.float64)
@@ -131,7 +132,7 @@ class MultiGymRunner(object):
             while not done:
                 if render:
                     self.env.render()
-                actions = self._select_actions(state)
+                actions = self._select_actions(state, r_eps)
                 next_state, rewards, done, info = self.env.step(self._process_actions(actions))
                 next_state = self._preprocess_state(next_state)
                 rewards = self._preprocess_reward(rewards)

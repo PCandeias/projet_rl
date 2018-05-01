@@ -39,4 +39,4 @@ with tf.Session(config=tf.ConfigProto(
                                  save_frequency=500, replay_start_size=1000, gamma=0.99, eps=1.0, eps_decay=0.9995,
                                  eps_min=0.02, alpha=0.00025, memory_size=50000, batch_size=32,
                                  freeze_target_frequency=10000, double_q=True, verbose=False)
-    runner.run(n_episodes=10000, train=True, verbose=True, display_frequency=100)
+    runner.run(n_episodes=10000, train=False, verbose=True, display_frequency=100, eps=0.0001)
