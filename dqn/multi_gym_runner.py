@@ -94,7 +94,7 @@ class MultiGymRunner(object):
             else:
                 predictions.append(agent.get_values(state))
         return np.array(predictions)
-    
+
     def _train_agents(self):
         for agent in self.agents:
             agent.replay()
