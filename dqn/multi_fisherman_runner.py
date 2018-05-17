@@ -29,6 +29,6 @@ with tf.Session(config=tf.ConfigProto(
                                  save_frequency=1000, replay_start_size=20000, gamma=1.0, eps=1.0, eps_decay=0.99995,
                                  eps_min=0.01, alpha=0.00000000025, memory_size=1000000, batch_size=32,
                                  freeze_target_frequency=10000, double_q=True, verbose=False)
-    scores = runner.run(n_episodes=20000, train=False, verbose=True, display_frequency=100, eps=0.1)
-    np.save(scores_dir + "50agents", scores)
+    scores = runner.run(n_episodes=20000, train=False, verbose=True, display_frequency=100, eps=0.0001)
+    # np.save(scores_dir + "50agents", scores)
 
