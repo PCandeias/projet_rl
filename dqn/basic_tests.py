@@ -22,12 +22,9 @@ class MultiFishermanRunner(MultiGymRunner):
         return 1 + self.env.n_groups
 
 
-
-
 def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,
-        n_episodes=20000, g_consumption=None, n_iterations=10,
-        save_model=False):
-    print("Running test: %s ## n_agents=%d , pop_size=%d, max_stock=%d, initial_stock=%d, lr=%f" % (test_name, n_agents,
+        n_episodes=20000, g_consumption=None, n_iterations=10, save_model=False):
+    print("Running test: %s ## n_agents=%d , pop_size=%d, max_stock=%d, initial_stock=%d, lr=%.15f" % (test_name, n_agents,
         pop_size, max_stock, initial_stock, lr))
     for i in range(n_iterations):
         print("Iteration %d" % i)
@@ -37,12 +34,12 @@ def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth
                                      eps_min=0.01, alpha=lr, memory_size=1000000, batch_size=32,
                                      freeze_target_frequency=10000, double_q=True, verbose=False)
         runner._create_environment(max_stock=max_stock, initial_stock=initial_stock, population=pop_size,
-                growth_rate=growth_rate, max_steps=max_steps, n_groups=n_groups)
-        runner._create_agents(load_filename=None, gamma=1.0, alpha=lr, eps=1.0, eps_decay=0.995,
+                growth_rate=growth_rate, max_steps=max_steps, n_groups=n_groups, g_consumption=g_consumption)
+        runner._create_agents(load_filename=None, gamma=1.0, alpha=lr, eps=1.0, eps_decay=0.99995,
                             eps_min=0.01,memory_size=1000000, batch_size=32, double_q=True,
                             freeze_target_frequency=10000, verbose=False)
 
-        train_scores = runner.run(n_episodes=1, train=True, verbose=True, display_frequency=2000)
+        train_scores = runner.run(n_episodes=n_episodes, train=True, verbose=True, display_frequency=2000)
         print("Evaluating model.")
         eval_scores = runner.run(n_episodes=50, train=False, verbose=True, display_frequency=10, eps=0.0000001)
         np.save(scores_dir + str(i) + test_name, train_scores)
@@ -64,11 +61,31 @@ with tf.Session(config=tf.ConfigProto(
     run_test("test6", 10, 10, 6, 6, 0.00000000025, n_groups=4)
     run_test("test7", 10, 10, 6, 6, 0.00000000025, n_groups=8)
     run_test("test8", 10, 10, 6, 6, 0.00000000025, n_groups=16)
+    print("SURPLUST TEST 0:")
+    run_test("test9", 10, 10, 12, 12, 0.00000000025)
+    run_test("test10", 10, 10, 12, 12, 0.000000025)
+    run_test("test11", 10, 10, 12, 12, 0.0000025)
+    run_test("test12", 10, 10, 12, 12, 0.00025)
     print("BASIC TESTS 1:")
-    run_test("test9", 100, 100, 100, 100, 0.00000000025)
-    run_test("test10", 100, 100, 100, 100, 0.000000025)
-    run_test("test11", 100, 100, 100, 100, 0.0000025)
-    run_test("test12", 100, 100, 100, 100, 0.00025)
+    run_test("test13", 100, 100, 100, 100, 0.00000000025)
+    run_test("test14", 100, 100, 100, 100, 0.000000025)
+    run_test("test15", 100, 100, 100, 100, 0.0000025)
+    run_test("test16", 100, 100, 100, 100, 0.00025)
     print("SCARCITY TESTS 1:")
-    run_test("test12", 100, 100, 60, 60, 0.00000000025)
-    run_test("test13", 100, 100, 60, 60, 0.000000025)
+    run_test("test17", 100, 100, 60, 60, 0.00000000025)
+    run_test("test18", 100, 100, 60, 60, 0.000000025)
+    run_test("test19", 100, 100, 60, 60, 0.00000000025, n_groups=4)
+    run_test("test20", 100, 100, 60, 60, 0.00000000025, n_groups=8)
+    run_test("test21", 100, 100, 60, 60, 0.00000000025, n_groups=16)
+    print("SURPLUS TESTS 1:")
+    run_test("test22", 100, 100, 120, 120, 0.00000000025)
+    run_test("test23", 100, 100, 120, 120, 0.000000025)
+    run_test("test24", 100, 100, 120, 120, 0.0000025)
+    run_test("test25", 100, 100, 120, 120, 0.00025)
+    print("PREDEFINED TESTS 0")
+    run_test("test26", 1, 10, 10, 10, 0.00000000025)
+    run_test("test27", 2, 10, 10, 10, 0.00000000025)
+    run_test("test28", 3, 10, 10, 10, 0.00000000025)
+    run_test("test29", 4, 10, 10, 10, 0.00000000025)
+    run_test("test30", 9, 9, 18, 18, 0.00000000025, g_consumption=[9,0])
+
