@@ -17,7 +17,7 @@ class RandomFishermanCorrelatedEnv(gym.Env):
         self.max_steps = 100
         self.action_space = spaces.Discrete(2)
         self.n_groups = 1
-        self.observation_space = spaces.Box(0, self.max_stock, shape=(1 + self.n_groups,))
+        self.observation_space = spaces.Box(0, self.max_stock, shape=(1 + self.n_groups,), dtype=np.float32)
 
     def set_environment_variables(self, max_stock, initial_stock, population, n_agents, growth_rate, max_steps,
             n_groups, g_consumption = None):
@@ -34,7 +34,7 @@ class RandomFishermanCorrelatedEnv(gym.Env):
         self.max_steps = max_steps
         self.n_groups = n_groups
         self.cur_group = 0
-        self.observation_space = spaces.Box(0, self.max_stock, shape=(1 + n_groups,))
+        self.observation_space = spaces.Box(0, self.max_stock, shape=(1 + n_groups,), dtype=np.float32)
         if g_consumption is None:
             self.g_consumption = [int(self.n_non_agents / self.n_groups) + (self.n_non_agents % self.n_groups if i == 0 else 0) for i in
                     range(self.n_groups)]

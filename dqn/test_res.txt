@@ -1,0 +1,35 @@
+BASIC TESTS 0:
+Running test: test0 ## n_agents=10 , pop_size=10, max_stock=10, initial_stock=10, lr=0.000000
+Iteration 0
+Training model
+Creating agents...
+Done creating agents.
+Evaluating model.
+Episode: 9 Average score: 1.700000
+Episode: 19 Average score: 1.700000
+Episode: 29 Average score: 1.700000
+Episode: 39 Average score: 1.700000
+Episode: 49 Average score: 1.700000
+Iteration 1
+Training model
+Creating agents...
+Done creating agents.
+Evaluating model.
+Episode: 9 Average score: 1.600000
+Episode: 19 Average score: 1.600000
+Episode: 29 Average score: 1.600000
+Episode: 39 Average score: 1.600000
+Episode: 49 Average score: 1.600000
+Iteration 2
+Training model
+Creating agents...
+Done creating agents.
+Evaluating model.
+Episode: 9 Average score: 1.600000
+Episode: 19 Average score: 1.600000
+Episode: 29 Average score: 1.600000
+Episode: 39 Average score: 1.600000
+Episode: 49 Average score: 1.600000
+Iteration 3
+Training model
+Creating agents...
