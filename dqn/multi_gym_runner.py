@@ -10,15 +10,15 @@ class MultiGymRunner(object):
                  update_frequency=1, double_q=False, freeze_target_frequency=500, verbose=False):
         self.n_agents = n_agents
         self.agent_mode = agent_mode
-        self._create_environment()
+        # self._create_environment()
         self.agents = []
         self.save_filename = save_filename
         self.save_frequency = save_frequency
         self.replay_start_size = replay_start_size
         self.update_frequency = update_frequency
-        self._create_agents(load_filename=load_filename, gamma=gamma, alpha=alpha, eps=eps, eps_decay=eps_decay,
-                            eps_min=eps_min,memory_size=memory_size, batch_size=batch_size, double_q=double_q,
-                            freeze_target_frequency=freeze_target_frequency, verbose=verbose)
+        # self._create_agents(load_filename=load_filename, gamma=gamma, alpha=alpha, eps=eps, eps_decay=eps_decay,
+                            # eps_min=eps_min,memory_size=memory_size, batch_size=batch_size, double_q=double_q,
+                            # freeze_target_frequency=freeze_target_frequency, verbose=verbose)
 
     def _create_environment(self):
         raise NotImplementedError
