@@ -1,0 +1,201 @@
+Running test: test11 ## n_agents=10 , pop_size=10, max_stock=12, initial_stock=12, lr=0.000002500000000
+Iteration 0
+Training model
+Creating agents...
+Done creating agents.
+Episode: 1999 Average score: 3.049495
+Episode: 3999 Average score: 1.995960
+Episode: 5999 Average score: 1.745455
+Episode: 7999 Average score: 1.607071
+Episode: 9999 Average score: 1.538384
+Episode: 11999 Average score: 1.534343
+Episode: 13999 Average score: 1.466667
+Episode: 15999 Average score: 1.489899
+Episode: 17999 Average score: 1.471717
+Episode: 19999 Average score: 1.515152
+Evaluating model.
+Episode: 9 Average score: 1.700000
+Episode: 19 Average score: 1.700000
+Episode: 29 Average score: 1.700000
+Episode: 39 Average score: 1.700000
+Episode: 49 Average score: 1.700000
+Iteration 1
+Training model
+Creating agents...
+Done creating agents.
+Episode: 1999 Average score: 3.175758
+Episode: 3999 Average score: 1.978788
+Episode: 5999 Average score: 1.671717
+Episode: 7999 Average score: 1.612121
+Episode: 9999 Average score: 1.534343
+Episode: 11999 Average score: 1.511111
+Episode: 13999 Average score: 1.480808
+Episode: 15999 Average score: 1.465657
+Episode: 17999 Average score: 1.456566
+Episode: 19999 Average score: 1.447475
+Evaluating model.
+Episode: 9 Average score: 1.400000
+Episode: 19 Average score: 1.400000
+Episode: 29 Average score: 1.400000
+Episode: 39 Average score: 1.400000
+Episode: 49 Average score: 1.400000
+Iteration 2
+Training model
+Creating agents...
+Done creating agents.
+Episode: 1999 Average score: 3.124242
+Episode: 3999 Average score: 1.982828
+Episode: 5999 Average score: 1.777778
+Episode: 7999 Average score: 1.635354
+Episode: 9999 Average score: 1.581818
+Episode: 11999 Average score: 1.510101
+Episode: 13999 Average score: 1.491919
+Episode: 15999 Average score: 1.472727
+Episode: 17999 Average score: 1.460606
+Episode: 19999 Average score: 1.446465
+Evaluating model.
+Episode: 9 Average score: 1.400000
+Episode: 19 Average score: 1.400000
+Episode: 29 Average score: 1.400000
+Episode: 39 Average score: 1.400000
+Episode: 49 Average score: 1.400000
+Iteration 3
+Training model
+Creating agents...
+Done creating agents.
+Episode: 1999 Average score: 3.023232
+Episode: 3999 Average score: 1.950505
+Episode: 5999 Average score: 1.734343
+Episode: 7999 Average score: 1.616162
+Episode: 9999 Average score: 1.513131
+Episode: 11999 Average score: 1.519192
+Episode: 13999 Average score: 1.486869
+Episode: 15999 Average score: 1.507071
+Episode: 17999 Average score: 1.500000
+Episode: 19999 Average score: 1.461616
+Evaluating model.
+Episode: 9 Average score: 1.400000
+Episode: 19 Average score: 1.400000
+Episode: 29 Average score: 1.400000
+Episode: 39 Average score: 1.400000
+Episode: 49 Average score: 1.400000
+Iteration 4
+Training model
+Creating agents...
+Done creating agents.
+Episode: 1999 Average score: 3.127273
+Episode: 3999 Average score: 2.029293
+Episode: 5999 Average score: 1.697980
+Episode: 7999 Average score: 1.652525
+Episode: 9999 Average score: 1.563636
+Episode: 11999 Average score: 1.530303
+Episode: 13999 Average score: 1.507071
+Episode: 15999 Average score: 1.522222
+Episode: 17999 Average score: 1.501010
+Episode: 19999 Average score: 1.507071
+Evaluating model.
+Episode: 9 Average score: 1.500000
+Episode: 19 Average score: 1.500000
+Episode: 29 Average score: 1.500000
+Episode: 39 Average score: 1.500000
+Episode: 49 Average score: 1.500000
+Iteration 5
+Training model
+Creating agents...
+Done creating agents.
+Episode: 1999 Average score: 3.439394
+Episode: 3999 Average score: 1.943434
+Episode: 5999 Average score: 1.747475
+Episode: 7999 Average score: 1.612121
+Episode: 9999 Average score: 1.586869
+Episode: 11999 Average score: 1.515152
+Episode: 13999 Average score: 1.511111
+Episode: 15999 Average score: 1.457576
+Episode: 17999 Average score: 1.471717
+Episode: 19999 Average score: 1.525253
+Evaluating model.
+Episode: 9 Average score: 1.400000
+Episode: 19 Average score: 1.400000
+Episode: 29 Average score: 1.400000
+Episode: 39 Average score: 1.400000
+Episode: 49 Average score: 1.400000
+Iteration 6
+Training model
+Creating agents...
+Done creating agents.
+Episode: 1999 Average score: 2.845455
+Episode: 3999 Average score: 1.980808
+Episode: 5999 Average score: 1.745455
+Episode: 7999 Average score: 1.601010
+Episode: 9999 Average score: 1.529293
+Episode: 11999 Average score: 1.515152
+Episode: 13999 Average score: 1.468687
+Episode: 15999 Average score: 1.465657
+Episode: 17999 Average score: 1.452525
+Episode: 19999 Average score: 1.442424
+Evaluating model.
+Episode: 9 Average score: 1.400000
+Episode: 19 Average score: 1.400000
+Episode: 29 Average score: 1.400000
+Episode: 39 Average score: 1.400000
+Episode: 49 Average score: 1.400000
+Iteration 7
+Training model
+Creating agents...
+Done creating agents.
+Episode: 1999 Average score: 3.248485
+Episode: 3999 Average score: 1.946465
+Episode: 5999 Average score: 1.727273
+Episode: 7999 Average score: 1.635354
+Episode: 9999 Average score: 1.575758
+Episode: 11999 Average score: 1.552525
+Episode: 13999 Average score: 1.485859
+Episode: 15999 Average score: 1.474747
+Episode: 17999 Average score: 1.497980
+Episode: 19999 Average score: 1.568687
+Evaluating model.
+Episode: 9 Average score: 1.400000
+Episode: 19 Average score: 1.400000
+Episode: 29 Average score: 1.400000
+Episode: 39 Average score: 1.400000
+Episode: 49 Average score: 1.400000
+Iteration 8
+Training model
+Creating agents...
+Done creating agents.
+Episode: 1999 Average score: 3.432323
+Episode: 3999 Average score: 1.937374
+Episode: 5999 Average score: 1.678788
+Episode: 7999 Average score: 1.630303
+Episode: 9999 Average score: 1.532323
+Episode: 11999 Average score: 1.498990
+Episode: 13999 Average score: 1.519192
+Episode: 15999 Average score: 1.495960
+Episode: 17999 Average score: 1.470707
+Episode: 19999 Average score: 1.469697
+Evaluating model.
+Episode: 9 Average score: 1.400000
+Episode: 19 Average score: 1.400000
+Episode: 29 Average score: 1.400000
+Episode: 39 Average score: 1.400000
+Episode: 49 Average score: 1.400000
+Iteration 9
+Training model
+Creating agents...
+Done creating agents.
+Episode: 1999 Average score: 3.175758
+Episode: 3999 Average score: 1.904040
+Episode: 5999 Average score: 1.751515
+Episode: 7999 Average score: 1.618182
+Episode: 9999 Average score: 1.566667
+Episode: 11999 Average score: 1.497980
+Episode: 13999 Average score: 1.497980
+Episode: 15999 Average score: 1.549495
+Episode: 17999 Average score: 1.490909
+Episode: 19999 Average score: 1.488889
+Evaluating model.
+Episode: 9 Average score: 1.500000
+Episode: 19 Average score: 1.500000
+Episode: 29 Average score: 1.500000
+Episode: 39 Average score: 1.500000
+Episode: 49 Average score: 1.500000
