@@ -18,6 +18,80 @@ MultiFishermanRunner	dqn/multi_fish_test.py	/^class MultiFishermanRunner(MultiGy
 MultiFishermanRunner	dqn/multi_fisherman_runner.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
 MultiFishermanRunner	dqn/scarcity_tests.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
 MultiFishermanRunner	dqn/server_test.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/single_tests.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test0.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test1.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test10.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test11.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test12.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test13.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test14.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test15.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test16.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test17.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test18.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test19.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test2.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test20.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test21.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test22.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test23.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test24.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test25.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test26.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test27.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test28.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test29.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test3.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test30.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test39.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test4.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test40.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test5.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test6.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test7.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test8.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test9.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test_n_0.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test_n_1.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test_n_2.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test_n_3.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/test_n_4.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test0.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test1.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test10.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test11.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test12.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test13.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test14.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test15.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test16.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test17.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test18.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test19.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test2.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test20.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test21.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test22.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test23.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test24.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test25.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test26.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test27.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test28.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test29.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test3.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test30.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test39.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test4.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test40.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test5.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test6.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test7.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test8.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
+MultiFishermanRunner	dqn/tests/test9.py	/^class MultiFishermanRunner(MultiGymRunner):$/;"	c
 MultiGymRunner	dqn/multi_gym_runner.py	/^class MultiGymRunner(object):$/;"	c
 MultiLunarLanderRunner	dqn/multi_lunarlander.py	/^class MultiLunarLanderRunner(MultiGymRunner):$/;"	c
 PgSolver	dqn/pg_solver.py	/^class PgSolver(object):$/;"	c
@@ -47,6 +121,80 @@ _create_environment	dqn/multi_lunarlander.py	/^    def _create_environment(self)
 _create_environment	dqn/multi_mountaincar_runner.py	/^    def _create_environment(self):$/;"	m	class:MultiCartpoleRunner
 _create_environment	dqn/scarcity_tests.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
 _create_environment	dqn/server_test.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/single_tests.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test0.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test1.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test10.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test11.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test12.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test13.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test14.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test15.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test16.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test17.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test18.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test19.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test2.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test20.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test21.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test22.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test23.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test24.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test25.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test26.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test27.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test28.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test29.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test3.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test30.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test39.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test4.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test40.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test5.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test6.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test7.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test8.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test9.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test_n_0.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test_n_1.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test_n_2.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test_n_3.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/test_n_4.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test0.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test1.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test10.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test11.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test12.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test13.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test14.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test15.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test16.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test17.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test18.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test19.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test2.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test20.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test21.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test22.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test23.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test24.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test25.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test26.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test27.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test28.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test29.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test3.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test30.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test39.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test4.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test40.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test5.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test6.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test7.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test8.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
+_create_environment	dqn/tests/test9.py	/^    def _create_environment(self, max_stock=50, initial_stock=50, population=50, growth_rate=2, max_steps=100,$/;"	m	class:MultiFishermanRunner
 _display_metrics	dqn/multi_gym_runner.py	/^    def _display_metrics(self, ep_number):$/;"	m	class:MultiGymRunner
 _display_metrics	dqn/multi_mountaincar_runner.py	/^    def _display_metrics(self, ep_number):$/;"	m	class:MultiCartpoleRunner
 _preprocess_reward	dqn/multi_breakout_runner.py	/^    def _preprocess_reward(self, reward):$/;"	m	class:MultiBreakoutRunner
@@ -71,6 +219,12 @@ _stop_condition	dqn/multi_breakout_runner.py	/^    def _stop_condition(self, epi
 _stop_condition	dqn/multi_cartpole_runner.py	/^    def _stop_condition(self, episode_number):$/;"	m	class:MultiCartpoleRunner
 _stop_condition	dqn/multi_gym_runner.py	/^    def _stop_condition(self, episode_number):$/;"	m	class:MultiGymRunner
 _stop_condition	dqn/multi_lunarlander.py	/^    def _stop_condition(self, episode_number):$/;"	m	class:MultiLunarLanderRunner
+_stop_condition	dqn/test0.py	/^    def _stop_condition(self, episode_number):$/;"	m	class:MultiFishermanRunner
+_stop_condition	dqn/test_n_0.py	/^    def _stop_condition(self, episode_number):$/;"	m	class:MultiFishermanRunner
+_stop_condition	dqn/test_n_1.py	/^    def _stop_condition(self, episode_number):$/;"	m	class:MultiFishermanRunner
+_stop_condition	dqn/test_n_2.py	/^    def _stop_condition(self, episode_number):$/;"	m	class:MultiFishermanRunner
+_stop_condition	dqn/test_n_3.py	/^    def _stop_condition(self, episode_number):$/;"	m	class:MultiFishermanRunner
+_stop_condition	dqn/test_n_4.py	/^    def _stop_condition(self, episode_number):$/;"	m	class:MultiFishermanRunner
 _store_transitions	dqn/multi_gym_runner.py	/^    def _store_transitions(self, state, actions, rewards, next_state, done):$/;"	m	class:MultiGymRunner
 _train_agents	dqn/multi_gym_runner.py	/^    def _train_agents(self):$/;"	m	class:MultiGymRunner
 _update_metrics	dqn/multi_gym_runner.py	/^    def _update_metrics(self, step, state, actions, rewards, next_state, done, score, ep_number):$/;"	m	class:MultiGymRunner
@@ -83,6 +237,7 @@ build_model	dqn/pg_solver.py	/^    def build_model(self):$/;"	m	class:PgSolver
 close	fisherman_dilemma/fisherman_correlated.py	/^    def close(self):$/;"	m	class:RandomFishermanCorrelatedEnv
 close	fisherman_dilemma/fisherman_random.py	/^    def close(self):$/;"	m	class:RandomFishermanEnv
 close	fisherman_dilemma/fisherman_random_group.py	/^    def close(self):$/;"	m	class:RandomFishermanGroupEnv
+coord	dqn/basic_tests.py	/^coord = tf.train.Coordinator()$/;"	v
 copy_model	dqn/utility.py	/^def copy_model(model):$/;"	f
 create_agent	dqn/old/gym_runner.py	/^    def create_agent(self, gamma=1.0, eps=1.0, eps_decay=0.99, eps_min=0.05, alpha=0.01, alpha_decay=0.01):$/;"	m	class:GymRunner
 create_environment	dqn/old/cartpole_runner.py	/^    def create_environment(self):$/;"	m	class:CartPoleRunner
@@ -101,6 +256,80 @@ get_action_size	dqn/old/cartpole_runner.py	/^    def get_action_size(self):$/;"	
 get_action_size	dqn/old/gym_runner.py	/^    def get_action_size(self):$/;"	m	class:GymRunner
 get_action_size	dqn/scarcity_tests.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
 get_action_size	dqn/server_test.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/single_tests.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test0.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test1.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test10.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test11.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test12.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test13.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test14.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test15.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test16.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test17.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test18.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test19.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test2.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test20.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test21.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test22.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test23.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test24.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test25.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test26.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test27.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test28.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test29.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test3.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test30.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test39.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test4.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test40.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test5.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test6.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test7.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test8.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test9.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test_n_0.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test_n_1.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test_n_2.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test_n_3.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/test_n_4.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test0.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test1.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test10.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test11.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test12.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test13.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test14.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test15.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test16.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test17.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test18.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test19.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test2.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test20.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test21.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test22.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test23.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test24.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test25.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test26.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test27.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test28.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test29.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test3.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test30.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test39.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test4.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test40.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test5.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test6.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test7.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test8.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
+get_action_size	dqn/tests/test9.py	/^    def get_action_size(self):$/;"	m	class:MultiFishermanRunner
 get_metrics	dqn/multi_gym_runner.py	/^    def get_metrics(self):$/;"	m	class:MultiGymRunner
 get_metrics	dqn/multi_mountaincar_runner.py	/^    def get_metrics(self):$/;"	m	class:MultiCartpoleRunner
 get_observation_size	dqn/basic_tests.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
@@ -115,20 +344,166 @@ get_observation_size	dqn/old/cartpole_runner.py	/^    def get_observation_size(s
 get_observation_size	dqn/old/gym_runner.py	/^    def get_observation_size(self):$/;"	m	class:GymRunner
 get_observation_size	dqn/scarcity_tests.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
 get_observation_size	dqn/server_test.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/single_tests.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test0.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test1.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test10.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test11.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test12.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test13.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test14.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test15.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test16.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test17.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test18.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test19.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test2.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test20.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test21.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test22.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test23.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test24.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test25.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test26.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test27.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test28.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test29.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test3.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test30.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test39.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test4.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test40.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test5.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test6.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test7.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test8.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test9.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test_n_0.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test_n_1.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test_n_2.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test_n_3.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/test_n_4.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test0.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test1.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test10.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test11.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test12.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test13.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test14.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test15.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test16.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test17.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test18.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test19.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test2.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test20.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test21.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test22.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test23.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test24.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test25.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test26.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test27.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test28.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test29.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test3.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test30.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test39.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test4.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test40.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test5.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test6.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test7.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test8.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
+get_observation_size	dqn/tests/test9.py	/^    def get_observation_size(self):$/;"	m	class:MultiFishermanRunner
 get_predictions	dqn/multi_gym_runner.py	/^    def get_predictions(self, state):$/;"	m	class:MultiGymRunner
 get_probabilities	dqn/ac_solver.py	/^    def get_probabilities(self, state):$/;"	m	class:AcSolver
 get_probabilities	dqn/pg_solver.py	/^    def get_probabilities(self, state):$/;"	m	class:PgSolver
 get_values	dqn/ac_solver.py	/^    def get_values(self, state):$/;"	m	class:AcSolver
 get_values	dqn/dqn_solver.py	/^    def get_values(self, state):$/;"	m	class:DqnSolver
-intra_op_parallelism_threads	dqn/basic_tests.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
 intra_op_parallelism_threads	dqn/scarcity_tests.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
 intra_op_parallelism_threads	dqn/server_test.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/single_tests.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test0.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test1.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test10.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test11.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test12.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test13.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test14.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test15.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test16.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test17.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test18.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test19.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test2.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test20.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test21.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test22.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test23.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test24.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test25.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test26.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test27.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test28.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test29.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test3.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test30.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test39.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test4.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test40.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test5.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test6.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test7.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test8.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test9.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test_n_0.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test_n_1.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test_n_2.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test_n_3.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/test_n_4.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test0.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test1.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test10.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test11.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test12.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test13.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test14.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test15.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test16.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test17.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test18.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test19.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test2.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test20.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test21.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test22.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test23.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test24.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test25.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test26.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test27.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test28.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test29.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test3.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test30.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test39.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test4.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test40.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test5.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test6.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test7.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test8.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
+intra_op_parallelism_threads	dqn/tests/test9.py	/^        intra_op_parallelism_threads=32)) as sess:$/;"	v
 load_model	dqn/ac_solver.py	/^    def load_model(self, load_filename):$/;"	m	class:AcSolver
 load_model	dqn/dqn_solver.py	/^    def load_model(self, load_filename):$/;"	m	class:DqnSolver
 load_model	dqn/pg_solver.py	/^    def load_model(self, load_filename):$/;"	m	class:PgSolver
 models_directory	dqn/utility.py	/^models_directory = "models\/"$/;"	v
 num_test_iter	dqn/multi_fish_test.py	/^    num_test_iter = 10$/;"	v
-plot_results	dqn/utility.py	/^def plot_results(results):$/;"	f
 preprocess_reward	dqn/old/gym_runner.py	/^    def preprocess_reward(self, reward):$/;"	m	class:GymRunner
 preprocess_state	dqn/old/cartpole_runner.py	/^    def preprocess_state(self, state):$/;"	m	class:CartPoleRunner
 preprocess_state	dqn/old/gym_runner.py	/^    def preprocess_state(self, state):$/;"	m	class:GymRunner
@@ -143,15 +518,90 @@ reset	fisherman_dilemma/fisherman_random.py	/^    def reset(self):$/;"	m	class:R
 reset	fisherman_dilemma/fisherman_random_group.py	/^    def reset(self):$/;"	m	class:RandomFishermanGroupEnv
 run	dqn/multi_gym_runner.py	/^    def run(self, n_episodes, train=False, render=False, verbose=False, display_frequency=1000, eps=None):$/;"	m	class:MultiGymRunner
 run	dqn/old/gym_runner.py	/^    def run(self, n_episodes, train=False, render=False, goal_score=None, verbose=False):$/;"	m	class:GymRunner
-run_test	dqn/basic_tests.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/basic_tests.py	/^def run_test(thread_n, test_name, n_agents, pop_size, max_stock, initial_stock, lr, n_groups=2, g_consumption=None,$/;"	f
 run_test	dqn/scarcity_tests.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
 run_test	dqn/server_test.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/single_tests.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test0.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test1.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test10.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test11.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test12.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test13.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test14.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test15.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test16.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test17.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test18.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test19.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test2.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test20.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test21.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test22.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test23.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test24.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test25.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test26.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test27.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test28.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test29.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test3.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test30.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test39.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test4.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test40.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test5.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test6.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test7.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test8.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test9.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test_n_0.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test_n_1.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test_n_2.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test_n_3.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/test_n_4.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test0.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test1.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test10.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test11.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test12.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test13.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test14.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test15.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test16.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test17.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test18.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test19.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test2.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test20.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test21.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test22.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test23.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test24.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test25.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test26.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test27.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test28.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test29.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test3.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test30.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test39.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test4.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test40.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test5.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test6.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test7.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test8.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
+run_test	dqn/tests/test9.py	/^def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,$/;"	f
 runner	dqn/multi_breakout_runner.py	/^    runner = MultiBreakoutRunner(n_agents=1, agent_mode='dqn', save_filename='breakout', load_filename='breakout',$/;"	v	class:MultiBreakoutRunner
 runner	dqn/multi_cartpole_runner.py	/^    runner = MultiCartpoleRunner(n_agents=1, agent_mode='pg', save_filename='cartpole', load_filename='cartpole',$/;"	v	class:MultiCartpoleRunner
 runner	dqn/multi_fisherman_runner.py	/^    runner = MultiFishermanRunner(n_agents=50, agent_mode='dqn', save_filename='fisherman', load_filename='fisherman',$/;"	v
 runner	dqn/multi_lunarlander.py	/^    runner = MultiLunarLanderRunner(n_agents=1, agent_mode='dqn', save_filename='lunarlander', load_filename='lunarlander',$/;"	v
 runner	dqn/multi_mountaincar_runner.py	/^runner = MultiCartpoleRunner(1, agent_mode='dqn', save_filename='mountaincar')$/;"	v
 runner	dqn/old/cartpole_runner.py	/^runner = CartPoleRunner()$/;"	v
+runners	dqn/basic_tests.py	/^runners = [None for i in range(len(threads))]$/;"	v
 sample	dqn/replay_buffer.py	/^    def sample(self, n_samples):$/;"	m	class:ReplayBuffer
 save_model	dqn/ac_solver.py	/^    def save_model(self, save_filename):$/;"	m	class:AcSolver
 save_model	dqn/dqn_solver.py	/^    def save_model(self, save_filename):$/;"	m	class:DqnSolver
@@ -160,8 +610,83 @@ scores	dqn/multi_fisherman_runner.py	/^    scores = runner.run(n_episodes=20000,
 scores_dir	dqn/basic_tests.py	/^scores_dir = "saved_scores\/"$/;"	v
 scores_dir	dqn/multi_fish_test.py	/^scores_dir = "saved_scores\/"$/;"	v
 scores_dir	dqn/multi_fisherman_runner.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/multi_lunarlander.py	/^scores_dir = "saved_scores\/"$/;"	v
 scores_dir	dqn/scarcity_tests.py	/^scores_dir = "saved_scores\/"$/;"	v
 scores_dir	dqn/server_test.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/single_tests.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test0.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test1.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test10.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test11.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test12.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test13.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test14.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test15.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test16.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test17.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test18.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test19.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test2.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test20.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test21.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test22.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test23.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test24.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test25.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test26.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test27.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test28.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test29.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test3.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test30.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test39.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test4.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test40.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test5.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test6.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test7.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test8.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test9.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test_n_0.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test_n_1.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test_n_2.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test_n_3.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/test_n_4.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test0.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test1.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test10.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test11.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test12.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test13.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test14.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test15.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test16.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test17.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test18.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test19.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test2.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test20.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test21.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test22.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test23.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test24.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test25.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test26.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test27.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test28.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test29.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test3.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test30.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test39.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test4.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test40.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test5.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test6.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test7.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test8.py	/^scores_dir = "saved_scores\/"$/;"	v
+scores_dir	dqn/tests/test9.py	/^scores_dir = "saved_scores\/"$/;"	v
 select_action	dqn/ac_solver.py	/^    def select_action(self, state, eps=None):$/;"	m	class:AcSolver
 select_action	dqn/dqn_solver.py	/^    def select_action(self, state, eps=None):$/;"	m	class:DqnSolver
 select_action	dqn/pg_solver.py	/^    def select_action(self, state, eps=None):$/;"	m	class:PgSolver
@@ -175,3 +700,4 @@ step	fisherman_dilemma/fisherman_random_group.py	/^    def step(self, actions):$
 store	dqn/ac_solver.py	/^    def store(self, state, action, reward, next_state, done):$/;"	m	class:AcSolver
 store	dqn/dqn_solver.py	/^    def store(self, state, action, reward, next_state, done):$/;"	m	class:DqnSolver
 store	dqn/pg_solver.py	/^    def store(self, state, action, reward, next_state, done):$/;"	m	class:PgSolver
+threads	dqn/basic_tests.py	/^threads = []$/;"	v
