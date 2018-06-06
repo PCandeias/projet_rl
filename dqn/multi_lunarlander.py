@@ -4,6 +4,8 @@ import gym
 import tensorflow as tf
 from keras.backend import tensorflow_backend as K
 
+scores_dir = "saved_scores/"
+
 class MultiLunarLanderRunner(MultiGymRunner):
     def _create_environment(self):
         self.env = gym.make('LunarLander-v2')
@@ -33,6 +35,7 @@ with tf.Session(config=tf.ConfigProto(
                                  eps_min=0.02, alpha=0.00025, memory_size=100000, batch_size=32,
                                  freeze_target_frequency=10000, double_q=True, verbose=False)
     if True:
-        runner.run(n_episodes=100000, train=True, verbose=True, render=False, display_frequency=100)
+        scores = runner.run(n_episodes=10000, train=True, verbose=True, render=False, display_frequency=10)
+        np.save(scores_dir + "lunarlander", scores)
     else:
         runner.run(n_episodes=100000, train=False, verbose=True, render=True, display_frequency=5)

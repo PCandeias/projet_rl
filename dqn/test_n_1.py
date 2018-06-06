@@ -26,7 +26,7 @@ class MultiFishermanRunner(MultiGymRunner):
 
 
 def run_test(test_name, n_agents, pop_size, max_stock, initial_stock, lr, growth_rate=2, max_steps=100, n_groups=2,
-        n_episodes=20000, g_consumption=None, n_iterations=1, save_model=False):
+        n_episodes=20000, g_consumption=None, n_iterations=2, save_model=False):
     print("Running test: %s ## n_agents=%d , pop_size=%d, max_stock=%d, initial_stock=%d, lr=%.15f" % (test_name, n_agents,
         pop_size, max_stock, initial_stock, lr))
     for i in range(n_iterations):
@@ -51,5 +51,5 @@ with tf.Session(config=tf.ConfigProto(
     K.set_session(sess)
 
     print("BASIC TESTS 0:")
-    run_test("test_n_0", 10, 10, 10, 10, 0.00000000025)
+    run_test("test_n_1", 10, 10, 10, 10, 0.000000025)
 
